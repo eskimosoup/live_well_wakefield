@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+
+  resources :contacts, only: [:new, :create]
+  resources :pages, only: :show
+
   mount Optimadmin::Engine => "/admin"
+
+  resources :services, only: [], path: '' do
+    resources :client_stories, path: 'client-story'
+  end
+
   root to: 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -57,4 +66,51 @@ Rails.application.routes.draw do
   #   end
 end
 Optimadmin::Engine.routes.draw do
+
+
+  resources :pages, except: :show do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'edit_images'
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
+  resources :contact_details, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
+  get 'client_stories/index'
+
+  get 'client_stories/show'
+
+  resources :client_stories, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+    end
+  end
+  resources :services, except: [:show] do
+    collection do
+      post 'order'
+    end
+    member do
+      get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
+    end
+  end
 end

@@ -24,9 +24,19 @@
       </div>
 
       <ul id="modules" class="content-category-list">
+        <%= module_link(model: Page, path: pages_path) %>
         <% if can? :manage, Optimadmin::MenuItem %>
           <li><%= link_to 'Site Navigation', menu_items_path %></li>
         <% end %>
+      </ul>
+      <div class="content-category-type">
+        Manage Your Service Content
+      </div>
+
+      <ul class="content-category-list">
+        <%= module_link(content: "Contact Details", model: ContactDetail, path: contact_details_path) %>
+        <%= module_link(content: "Client Stories", model: ClientStory, path: client_stories_path) %>
+        <%= module_link(model: Service, path: services_path) %>
       </ul>
     </div>
   </div>

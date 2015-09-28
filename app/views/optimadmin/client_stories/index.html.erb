@@ -1,0 +1,32 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Client Stories' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Client Story', object: ClientStory, path: new_client_story_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @client_stories.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+  <%= list_item 'large-8 small-8' do %>
+    <%= link_to octicon('chevron-down'), '#', class: 'helper-link index-list-expand-all', data: { this_class: 'octicon-chevron-up octicon-chevron-down' } %>
+    Title
+  <% end %>
+
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'View' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item 'large-1 hide-for-medium-down text-center last' do 'Delete' end %>
+  </div>
+
+  <!-- <div class='module-sortable' data-module="ClientStory"> -->
+  <%= render partial: 'client_story', collection: @client_stories, as: :client_story_presenter %>
+  <!-- </div> -->
+  <%= paginate @client_stories %>
+</div>

@@ -26,6 +26,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -122,6 +123,8 @@ GEM
     flamegraph (0.1.0)
       fast_stack
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     google-api-client (0.8.6)
@@ -228,6 +231,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.4)
       sprockets-rails
+    rails-assets-include-media (1.4.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -340,6 +344,7 @@ DEPENDENCIES
   database_cleaner (~> 1.5.0)
   factory_girl_rails (~> 4.5.0)
   flamegraph (~> 0.1.0)
+  friendly_id (~> 5.1.0)
   guard-rspec (~> 4.6.4)
   jbuilder (~> 2.0)
   jquery-rails
@@ -351,6 +356,7 @@ DEPENDENCIES
   quiet_assets (~> 1.1.0)
   rack-mini-profiler (~> 0.9.7)
   rails (= 4.2.4)
+  rails-assets-include-media!
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

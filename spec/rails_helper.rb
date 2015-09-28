@@ -6,6 +6,12 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'capybara/rspec'
+require 'capybara/poltergeist'
+require 'shoulda-matchers'
+require 'database_cleaner'
+require 'support/mailer_macros'
+require 'support/site_settings_macros'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -26,14 +32,67 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+Capybara.javascript_driver = :poltergeist
+
 RSpec.configure do |config|
+  config.include Rails.application.routes.url_helpers
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do |example|
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.start
+
+    CarrierWave.configure do |config|
+      config.storage = :file
+      config.enable_processing = false
+    end
+    CarrierWave::Uploader::Base.descendants.each do |klass|
+      next if klass.anonymous?
+      klass.class_eval do
+        def cache_dir
+          "#{Rails.root}/spec/support/uploads/tmp"
+        end
+
+        def store_dir
+          "#{Rails.root}/spec/support/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+        end
+      end
+    end
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+    FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+  end
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include ActionView::TestCase::Behavior, type: :presenter
+  config.include Capybara::DSL, type: :feature
+  config.include MailerMacros
+  config.include SiteSettingsMacros, type: :feature
+  config.before(:each, type: :feature) { reset_email }
+  config.before(:each, type: :feature) do
+    create(:site_setting_name)
+    create(:site_setting_email)
+  end
+  config.before(:each, type: :mailer) do
+    create(:site_setting_name)
+    create(:site_setting_email)
+  end
+  config.before(:each, js: true) do
+    page.driver.browser.url_blacklist = ["https://maps.googleapis.com", "connect.facebook.net"]
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

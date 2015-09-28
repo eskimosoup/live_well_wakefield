@@ -1,0 +1,33 @@
+<div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= client_story_presenter.id %>">
+
+
+
+    <div class="large-8 small-8 columns" data-equalizer-watch="module-list">
+
+    <%= client_story_presenter.toggle_title %>
+  </div>
+
+
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= client_story_presenter.toggle_link %>
+  </div>
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%#= client_story_presenter.view_link %>
+  </div>
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= client_story_presenter.edit_link %>
+  </div>
+
+  <div class="large-1 hide-for-medium-down columns last" data-equalizer-watch="module-list">
+    <%= client_story_presenter.delete_link %>
+  </div>
+
+  <div class="row module-list-detail hide" id="index-list-<%= client_story_presenter.id %>">
+    <div class="small-12 columns module-list-summary last">
+      <%= client_story_presenter.optimadmin_summary %>
+    </div>
+  </div>
+</div>
