@@ -12,10 +12,11 @@
   </div>
 
   <div class="row collapse module-list-index header">
-  <%= list_item 'large-8 small-8' do %>
+  <%= list_item 'large-4 small-8' do %>
     <%= link_to octicon('chevron-down'), '#', class: 'helper-link index-list-expand-all', data: { this_class: 'octicon-chevron-up octicon-chevron-down' } %>
     Title
   <% end %>
+  <%= list_item 'large-4 small-8' do 'Service name' end %>
 
 
     <%= list_item { 'Display' } %>

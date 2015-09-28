@@ -7,7 +7,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module LiveWellWakefield
-  class Application < Rails::Application
+  class Application < Rails::Application              
+    config.exceptions_app = self.routes
+
     {:env=>"production"}
     {:env=>"development"}
     # Settings in config/environments/* take precedence over those specified here.

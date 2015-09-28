@@ -9,6 +9,7 @@ RSpec.describe ClientStory, type: :model do
 
   describe "associations", :association do
     it { should belong_to(:service) }
+    it { should have_many(:pages) }
   end
 
   describe "scopes", :scope do

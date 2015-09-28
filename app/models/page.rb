@@ -3,6 +3,7 @@ class Page < ActiveRecord::Base
   friendly_id :slug_candidates, use: [:slugged, :history, :scoped], scope: :service_id
 
   belongs_to :service
+  belongs_to :client_story
 
   mount_uploader :image, PageUploader
 
@@ -15,10 +16,14 @@ class Page < ActiveRecord::Base
   validates :title, uniqueness: { scope: :service_id, message: 'already exists for this page' }
   validates :suggested_url, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already taken, leave blank to generate automatically' }
 
-  before_save :update_page_name
+  before_save :update_page_name, :update_service_from_client_story
+
+  def update_service_from_client_story
+    self.service_id = self.client_story.service_id if self.client_story.present? && self.client_story.changed?
+  end
 
   def update_page_name
-    if self.service.present?
+    if self.service_id.present?
       self.name = "#{self.title} (#{self.service.name})"
     else
       self.name = self.title

@@ -7,7 +7,7 @@ module Optimadmin
     end
 
     def title
-      page.title
+      page.name
     end
 
     def toggle_title
