@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Optimadmin::Engine => "/admin"
   root to: 'application#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -54,4 +55,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
+Optimadmin::Engine.routes.draw do
 end
