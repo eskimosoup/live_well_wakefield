@@ -1,0 +1,37 @@
+<div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= service_presenter.id %>">
+
+    <div class="large-1 hide-for-medium-down columns" data-equalizer-watch="module-list">
+      <span class="drag-helper"></span>
+    </div>
+
+
+
+    <div class="large-6 small-8 columns" data-equalizer-watch="module-list">
+
+    <%= service_presenter.name %>
+  </div>
+
+
+    <div class="large-2 hide-for-medium-down columns" data-equalizer-watch="module-list">
+      <%= service_presenter.edit_image(:image)%>
+    </div>
+
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= service_presenter.toggle_link %>
+  </div>
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= service_presenter.edit_link %>
+  </div>
+
+  <div class="large-1 hide-for-medium-down columns last" data-equalizer-watch="module-list">
+    <%= service_presenter.delete_link %>
+  </div>
+
+  <div class="row module-list-detail hide" id="index-list-<%= service_presenter.id %>">
+    <div class="small-12 columns module-list-summary last">
+      <%#= service_presenter.optimadmin_summary %>
+    </div>
+  </div>
+</div>

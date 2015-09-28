@@ -1,0 +1,45 @@
+<%= form_for @contact do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize @contact.errors.count, 'error' %> prevented this message from being sent
+      </h2>
+
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 columns field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 columns field">
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number %>
+    </div>
+    <div class="small-12 medium-6 columns field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :message %>
+      <%= f.text_area :message %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.hidden_field :service_id, value: @service.id if @service.present? %>
+    <%= f.submit "Send", class: "button" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<section class="separated-section page lightest-grey-background">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="content-box">
+        <h1>Contact Us</h1>
+
+        <div class="content-wrap">
+          <%= render 'shared/flash_messages' %>
+          <% if @contact_detail %>
+            <% @presented_contact_detail.name %>
+            <%= @presented_contact_detail.address %>
+            <%= @presented_contact_detail.postcode %>
+            <%= @presented_contact_detail.phone_number %>
+            <%= @presented_contact_detail.opening_hours %>
+          <% end %>
+          <%= render "form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

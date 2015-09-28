@@ -1,0 +1,12 @@
+@import 'optimadmin/lib/mixins', 'lib/variables';
+@import 'optimadmin/global/additional_reset';
+
+.image-left {
+  float: left;
+  margin: em(16px) em(16px) em(16px) 0;
+}
+
+.image-right {
+  float: right;
+  margin: em(16px) 0 em(16px) em(16px);
+}

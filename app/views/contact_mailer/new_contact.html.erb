@@ -1,0 +1,17 @@
+<p>
+  <strong>Name</strong> <%= @contact.name %>
+</p>
+
+<% if @contact.email %>
+  <p>
+    <strong>Email</strong> <%= mail_to @contact.email %>
+  </p>
+<% end %>
+
+<% if @contact.phone_number %>
+  <p>
+    <strong>Phone Number</strong> <%= @contact.phone_number %>
+  </p>
+<% end %>
+
+<%= simple_format "<strong>Message</strong><br/>" + @contact.message %>
