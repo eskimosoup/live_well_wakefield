@@ -16,10 +16,11 @@ class Page < ActiveRecord::Base
   validates :title, uniqueness: { scope: :service_id, message: 'already exists for this page' }
   validates :suggested_url, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already taken, leave blank to generate automatically' }
 
-  before_save :update_page_name, :update_service_from_client_story
+  before_save :update_service_from_client_story, if: "self.client_story.present? && self.client_story.service != self.service"
+  before_save :update_page_name
 
   def update_service_from_client_story
-    self.service_id = self.client_story.service_id if self.client_story.present? && self.client_story.changed?
+    self.service_id = self.client_story.service_id
   end
 
   def update_page_name

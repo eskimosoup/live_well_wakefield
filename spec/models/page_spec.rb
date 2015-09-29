@@ -23,20 +23,45 @@ RSpec.describe Page, type: :model do
     end
   end
 
-  describe "before save", :methods do
+  describe "before save", :callbacks do
     describe "has service" do
       let(:service) { create(:service) }
       let(:page) { create(:page, service: service) }
+
+      it "should callback update page name before save" do
+        expect(page).to callback(:update_page_name).before(:save)
+      end
 
       it "should have service name in page name" do
         expect(page.name).to eq("#{page.title} (#{service.name})")
       end
     end
 
+    describe "has client story" do
+      let(:client_story) { create(:client_story) }
+      let(:page) { create(:page, client_story: client_story) }
+
+      it "should callback update page service before save" do
+        expect(page).to callback(:update_service_from_client_story).before(:save)
+      end
+
+      it "should callback update page name before save" do
+        expect(page).to callback(:update_page_name).before(:save)
+      end
+
+      it "should have the service of the client story" do
+        expect(page.service).to eq(client_story.service)
+      end
+
+      it "should have service name in page name" do
+        expect(page.name).to eq("#{page.title} (#{client_story.service.name})")
+      end
+    end
+
     describe "does not have service" do
       let(:page) { create(:page) }
 
-      it "should have service name in page name" do
+      it "should not have service name in page name" do
         expect(page.name).to eq(page.title)
       end
     end

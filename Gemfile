@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda-matchers', '~> 2.8.0'
+  gem 'shoulda-callback-matchers'
 end
 
 group :test do
