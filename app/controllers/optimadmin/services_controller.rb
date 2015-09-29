@@ -48,7 +48,7 @@ module Optimadmin
     end
 
     def service_params
-      params.require(:service).permit(:position, :name, :image, :facebook_page_url, :display)
+      params.require(:service).permit(:position, :name, :image, :image_cache, :remove_image, :remote_image_url, :facebook_page_url, :display)
     end
   end
 end
