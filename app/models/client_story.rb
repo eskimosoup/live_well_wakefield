@@ -7,6 +7,8 @@ class ClientStory < ActiveRecord::Base
 
 
   scope :displayed, -> { where("display = ? and date <= ?", true, Date.today) }
+  scope :home_highlight, -> { where(home_highlight: true).displayed }
+  scope :positioned, -> { order(:position) }
 
   validates :title, :summary, :service_id, presence: true
   validates :suggested_url, uniqueness: { scope: :service_id, message: "is already taken, leave blank to generate automatically" }, allow_blank: true, if: Proc.new{|x| x.suggested_url.present? }

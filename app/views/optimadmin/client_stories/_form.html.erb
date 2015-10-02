@@ -55,6 +55,10 @@
         <%= f.select :service_id, Service.pluck(:name, :id), prompt: 'Please select a service' %>
       </div>
             <div class="field">
+        <%= f.label :home_highlight %> <%= module_tooltip('Home highlight shows on the home page', 'Checking home highlight will show this story on the home page, if it is set to be displayed.') %><br>
+        <%= f.check_box :home_highlight %>
+      </div>
+            <div class="field">
         <%= f.label :display %><br>
         <%= f.check_box :display %>
       </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928115619) do
+ActiveRecord::Schema.define(version: 20151002082448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20150928115619) do
     t.boolean  "display"
     t.string   "suggested_url"
     t.string   "slug"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "position"
+    t.boolean  "home_highlight"
   end
 
   add_index "client_stories", ["service_id"], name: "index_client_stories_on_service_id", using: :btree

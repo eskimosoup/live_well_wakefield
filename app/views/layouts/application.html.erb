@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LiveWellWakefield</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <%= render 'layouts/shared/head' %>
+  </head>
 
-<%= yield %>
+  <body>
+    <%= render 'layouts/shared/header' %>
 
-</body>
+    <%= yield %>
+
+    <%= render 'layouts/shared/footer' %>
+  </body>
 </html>

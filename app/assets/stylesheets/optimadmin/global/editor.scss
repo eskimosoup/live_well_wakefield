@@ -1,6 +1,66 @@
 @import 'optimadmin/lib/mixins', 'lib/variables';
 @import 'optimadmin/global/additional_reset';
 
+html,
+body {
+  font-family: $open-sans;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: underline;
+
+  &:link {
+    color: $primary-blue;
+  }
+
+  &:visited {
+    color: $primary-blue;
+  }
+
+  &:hover {
+    color: $purple;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $purple;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $open-sans-bold;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+
+}
+
 .image-left {
   float: left;
   margin: em(16px) em(16px) em(16px) 0;
