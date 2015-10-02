@@ -3,7 +3,7 @@ module Optimadmin
     before_action :set_client_story, only: [:show, :edit, :update, :destroy]
 
     def index
-      @client_stories = Optimadmin::BaseCollectionPresenter.new(collection: ClientStory.where('title ILIKE ?', "%#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ClientStoryPresenter)
+      @client_stories = Optimadmin::BaseCollectionPresenter.new(collection: ClientStory.where('title ILIKE ?', "%#{params[:search]}%").order(:position).page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ClientStoryPresenter)
     end
 
     def show

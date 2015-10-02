@@ -16,9 +16,14 @@ RSpec.describe ClientStory, type: :model do
     let(:client_story) { create(:client_story) }
     let(:hidden_client_story) { create(:client_story, display: false) }
     let(:future_client_story) { create(:client_story, display: true, date: Date.today + 7) }
+    let(:home_client_story) { create(:client_story, home_highlight: false) }
 
     it 'only returns displayed' do
       expect(ClientStory.displayed).not_to include hidden_client_story
+    end
+
+    it 'only returns home_highlight' do
+      expect(ClientStory.home_highlight).not_to include client_story
     end
   end
 

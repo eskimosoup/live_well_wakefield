@@ -1,6 +1,11 @@
 @import 'optimadmin/lib/mixins', 'lib/variables';
 @import 'optimadmin/global/additional_reset';
 
+html,
+body {
+  font-size: em(14px);
+}
+
 .image-left {
   float: left;
   margin: em(16px) em(16px) em(16px) 0;
