@@ -1,0 +1,9 @@
+.primary-header {
+  margin: em(28px) auto 0;
+}
+
+@include media('>phone') {
+  .swyp-logo {
+    margin: em(27px) 0 0;
+  }
+}

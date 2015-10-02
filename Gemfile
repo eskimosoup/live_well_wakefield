@@ -71,7 +71,3 @@ end
 
 gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git', branch: 'master'
 gem 'friendly_id', '~> 5.1.0'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-include-media'
-end

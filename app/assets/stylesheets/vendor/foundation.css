@@ -125,7 +125,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 71.429rem;
+  max-width: 76.500em;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
