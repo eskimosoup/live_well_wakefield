@@ -1,4 +1,4 @@
-<li>
+<li <%= 'class=has-dropdown' if sub_menu_items.present? %>>
   <%= menu_item_presenter.link_to_webpage %>
   <% if sub_menu_items.present? %>
     <%= content_tag :ul, class: "dropdown depth-#{ depth }" do %>
