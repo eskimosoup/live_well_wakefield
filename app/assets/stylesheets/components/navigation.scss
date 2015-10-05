@@ -19,17 +19,17 @@
     @include media('>phone') {
       border-right: 1px solid $white;
       display: inline-block;
-    }
 
-    &:first-of-type a {
-      padding-left: 0;
-    }
+      &:first-of-type a {
+        padding-left: 0;
+      }
 
-    &:last-of-type {
-      border-right: 0;
+      &:last-of-type {
+        border-right: 0;
 
-      a {
-        padding-right: 0;
+        a {
+          padding-right: 0;
+        }
       }
     }
   }

@@ -16,6 +16,7 @@
 //= require vendor/foundation/foundation.js
 //= require vendor/jquery-ui
 //= require vendor/doubleTapToGo
+//= require components/toggle_class
 
 $(function() {
   $('.service').matchHeight();

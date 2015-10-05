@@ -1,4 +1,10 @@
-<nav class="row primary-navigation">
+<div class="row show-for-small">
+  <div class="small-12 text-right columns">
+    <%= link_to (image_tag 'components/icons/hamburger.png', alt: 'Menu'), '#menu', class: 'toggle-class', data: { container: '.primary-navigation', class: 'hide-for-small', return: 'true' } %>
+  </div>
+</div>
+
+<nav class="row primary-navigation hide-for-small" id="menu">
   <div class="small-12 columns">
     <ul class="primary-navigation-links">
       <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
