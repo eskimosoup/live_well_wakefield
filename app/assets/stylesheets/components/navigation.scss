@@ -1,11 +1,48 @@
 .primary-navigation-links {
+  background: $primary-blue;
+  display: inline-block;
+  float: right;
   list-style: none;
   margin: 0;
+  padding: em(12px) em(15px);
   text-align: right;
 
   li {
     display: inline-block;
+
+    &:last-of-type a {
+      border-right: 0;
+    }
   }
+
+  a {
+    border-right: 1px solid $white;
+    display: block;
+    line-height: 1;
+    text-decoration: none;
+    padding: 0 em(12px) 0 em(8px);
+
+    &:link {
+      color: $white;
+    }
+
+    &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $white;
+    }
+  }
+}
+
+.has-dropdown {
+  
 }
 
 .dropdown {
