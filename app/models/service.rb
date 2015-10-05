@@ -6,12 +6,16 @@ class Service < ActiveRecord::Base
   has_many :pages, -> { displayed }
   has_one :contact_detail, -> { displayed }
 
+  scope :positioned, -> { order(:position) }
   scope :displayed, -> { where(display: true) }
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, :colour, presence: true, uniqueness: true
   validates :suggested_url, uniqueness: { message: "is already taken, leave blank to generate automatically" }, allow_blank: true, if: Proc.new{|x| x.suggested_url.present? }
 
   mount_uploader :image, ServiceUploader
+
+  COLOURS = ['blue', 'green', 'turquoise', 'red', 'purple', 'yellow']
+  validates :colour, inclusion: { in: COLOURS }
 
   def slug_candidates
     [

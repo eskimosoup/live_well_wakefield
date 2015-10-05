@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require matchHeight
 //= require vendor/foundation/foundation.js
+//= require vendor/jquery-ui
+//= require vendor/doubleTapToGo
+
+$(function() {
+  $('.service').matchHeight();
+  $('.primary-navigation-links').doubleTapToGo();
+});

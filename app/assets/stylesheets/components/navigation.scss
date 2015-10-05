@@ -1,26 +1,51 @@
 .primary-navigation-links {
   background: $primary-blue;
-  display: inline-block;
-  float: right;
   list-style: none;
   margin: 0;
   padding: em(12px) em(15px);
-  text-align: right;
 
-  li {
+  @include media('>phone') {
+    @include border-radius(12px 12px 0 0);
     display: inline-block;
+    float: right;
+    text-align: right;
+  }
 
-    &:last-of-type a {
+  @include media('<tablet') {
+    margin: em(10px) 0;
+  }
+
+  .top-level {
+    @include media('>phone') {
+      border-right: 1px solid $white;
+      display: inline-block;
+    }
+
+    &:first-of-type a {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
       border-right: 0;
+
+      a {
+        padding-right: 0;
+      }
     }
   }
 
   a {
-    border-right: 1px solid $white;
     display: block;
     line-height: 1;
     text-decoration: none;
-    padding: 0 em(12px) 0 em(8px);
+
+    @include media('>phone') {
+      padding: 0 em(12px) 0 em(8px);
+    }
+
+    @include media('<tablet') {
+      padding: em(12px) 0;
+    }
 
     &:link {
       color: $white;
@@ -42,9 +67,75 @@
 }
 
 .has-dropdown {
-  
+  background: image-url('components/icons/dropdown-expand.png') no-repeat 90% center;
+  padding-right: em(16px);
+
+  &:hover {
+    background-image: image-url('components/icons/dropdown-collapse.png');
+
+    .dropdown {
+      display: block;
+    }
+  }
+
+  a {
+    padding-right: em(16px);
+  }
 }
 
 .dropdown {
   display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  @include media('>phone') {
+    right: 13px;
+  }
+
+  @include media('<tablet') {
+    right: 0;
+  }
+
+  .inner {
+    background: $primary-blue;
+    text-align: left;
+
+    @include media('>phone') {
+      -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, .75);
+      -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, .75);
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, .75);
+      margin-top: em(15px);
+      padding: em(30px) em(10px);
+    }
+
+    @include media('<tablet') {
+      margin: 0 0 0;
+      padding: em(20px);
+    }
+  }
+
+  ul {
+    @extend %clearfix;
+    list-style: none;
+    margin: 0;
+
+    @include media('<tablet') {
+      margin: 0 em(10px);
+    }
+  }
+
+  .menu-item {
+    display: block;
+
+    @include media('>phone') {
+      float: left;
+      width: 33%;
+    }
+  }
+
+  a {
+    background: image-url('components/icons/subnav-arrow.png') no-repeat left center;
+    padding: em(10px) em(20px);
+  }
 }

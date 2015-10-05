@@ -1,9 +1,11 @@
-<div class="home-banner">
-  
+<div class="row">
+  <div class="small-12 columns">
+    <div class="home-banner">
+      <h1>Supporting <em>healthy living</em> for the people of Wakefield</h1>
+    </div>
+  </div>
 </div>
 
-<div class="row">
-  <div class="large-2 medium-4 small-12 columns">
-    <%= render partial: 'services/service', collection: @presented_services, as: :service_presenter %>
-  </div>
+<div class="row collapse">
+  <%= render partial: 'services/service', collection: @presented_services, as: :service_presenter %>
 </div>

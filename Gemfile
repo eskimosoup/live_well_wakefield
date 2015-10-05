@@ -69,5 +69,10 @@ group :development do
   gem 'bullet', '~> 4.14.7'
 end
 
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-matchHeight'
+end
+
 gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git', branch: 'master'
 gem 'friendly_id', '~> 5.1.0'

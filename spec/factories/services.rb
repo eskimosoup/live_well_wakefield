@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :service do
     position 1
     name "Service"
+    colour 'red'
     facebook_page_url "https://www.facebook.com/facebook"
     display true
     trait :with_image do

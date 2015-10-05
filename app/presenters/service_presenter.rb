@@ -1,4 +1,4 @@
 class ServicePresenter < BasePresenter
   presents :service
-  delegate :name, to: :service
+  delegate :name, :colour, to: :service
 end

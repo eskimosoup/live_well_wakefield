@@ -1,8 +1,14 @@
-<li <%= 'class=has-dropdown' if sub_menu_items.present? %>>
+<li class="menu-item <%= 'top-level' if depth == 1 %> <%= "has-dropdown" if sub_menu_items.present? %>">
   <%= menu_item_presenter.link_to_webpage %>
   <% if sub_menu_items.present? %>
-    <%= content_tag :ul, class: "dropdown depth-#{ depth }" do %>
-      <%= nested_menu_items(menu_items: sub_menu_items, depth: depth + 1) %>
+    <%= content_tag :div, class: "dropdown depth-#{ depth }" do %>
+      <div class="inner">
+        <div class="row">
+          <div class="medium-10 medium-centered columns">
+            <ul><%= nested_menu_items(menu_items: sub_menu_items, depth: depth + 1) %></ul>
+          </div>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </li>
