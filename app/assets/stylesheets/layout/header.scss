@@ -1,5 +1,11 @@
 .primary-header {
-  margin: em(28px) auto 0;
+  @include media('>phone') {
+    margin: em(28px) auto 0;
+  }
+
+  @include media('<tablet') {
+    margin: em(14px) auto;
+  }
 }
 
 @include media('>phone') {

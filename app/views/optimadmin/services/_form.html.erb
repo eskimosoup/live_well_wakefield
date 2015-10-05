@@ -39,6 +39,10 @@
 
     <%= field_set_tag nil, id: 'tabs-3' do %>
 
+            <div class="field">
+        <%= f.label :colour %><br>
+        <%= f.select :colour, Service::COLOURS, prompt: 'Please select' %>
+      </div>
           <div class="field">
       <%= f.label :facebook_page_url %><br>
       <%= f.text_field :facebook_page_url %>

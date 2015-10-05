@@ -5,7 +5,7 @@ module Optimadmin
     edit_images_for Service, [[:image, { show: ['fill', 200, 200], homepage: ['fill', 200, 200] }]]
 
     def index
-      @services = Optimadmin::BaseCollectionPresenter.new(collection: Service.where('name ILIKE ?', "%#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ServicePresenter)
+      @services = Optimadmin::BaseCollectionPresenter.new(collection: Service.where('name ILIKE ?', "%#{params[:search]}%").positioned.page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ServicePresenter)
     end
 
     def show
@@ -48,7 +48,7 @@ module Optimadmin
     end
 
     def service_params
-      params.require(:service).permit(:position, :name, :image, :image_cache, :remove_image, :remote_image_url, :facebook_page_url, :display)
+      params.require(:service).permit(:position, :colour, :name, :image, :image_cache, :remove_image, :remote_image_url, :facebook_page_url, :display)
     end
   end
 end

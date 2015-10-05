@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   before_action :global_site_settings, :load_objects
 
   def index
-    @presented_services = BaseCollectionPresenter.new(collection: Service.displayed.order(:name), view_template: view_context, presenter: ServicePresenter)
+    @presented_services = BaseCollectionPresenter.new(collection: Service.positioned.displayed.order(:name), view_template: view_context, presenter: ServicePresenter)
   end
 
   def load_objects

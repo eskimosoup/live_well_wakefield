@@ -1,5 +1,31 @@
 .home-banner {
   background: image-url('components/home/home-banner.png') no-repeat center;
-  margin: 0 auto;
+  margin: 0 auto em(10px);
   min-height: 367px;
+
+  h1 {
+    color: $primary-blue;
+    display: block;
+    text-align: center;
+    font-size: em(24px);
+
+    @include media('<tablet') {
+      padding: em(15px, 24px) 0;
+    }
+
+    @include media('>phone') {
+      width: 45%;
+      margin: 0 auto;
+      padding: em(29px, 24px) 0;
+    }
+
+    @include media('>=desktop') {
+      width: 37%;
+    }
+
+    em {
+      color: $green;
+      font-weight: $open-sans-bold;
+    }
+  }
 }

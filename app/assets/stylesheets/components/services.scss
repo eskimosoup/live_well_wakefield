@@ -1,0 +1,48 @@
+@mixin service-background($color, $img, $align: center) {
+  background-color: $color;
+
+  @include media('>phone') {
+    background-image: image-url($img);
+    background-position: top $align;
+    background-repeat:  no-repeat;
+  }
+}
+
+.service-blue {
+  @include service-background($blue, 'components/services/blue.png', right);
+}
+
+.service-green {
+  @include service-background($green, 'components/services/green.png', right);
+}
+
+.service-turquoise {
+  @include service-background($turquoise, 'components/services/turquoise.png', left);
+}
+
+.service-red {
+  @include service-background($red, 'components/services/red.png', left);
+}
+
+.service-purple {
+  @include service-background($purple, 'components/services/purple.png');
+}
+
+.service-yellow {
+  @include service-background($yellow, 'components/services/yellow.png', right);
+}
+
+.service {
+  font-weight: $open-sans-bold;
+  font-size: em(14px);
+  color: $white;
+
+  @include media('>phone') {
+    padding: em(40px) em(10px);
+    text-align: center;
+  }
+
+  @include media('<tablet') {
+    padding: em(10px) em(20px);
+  }
+}
