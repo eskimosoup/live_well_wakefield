@@ -1,0 +1,33 @@
+.facebook {
+  position: relative;
+  margin: em(20px) 0;
+
+  @include media('>=767px') {
+    background: image-url('components/home/facebook-background-tablet.png') no-repeat;
+    width: 767px;
+    min-height: 615px;
+  }
+
+  @include media('>=960px') {
+    background: image-url('components/home/facebook-background.png') no-repeat;
+    width: 962px;
+    min-height: 770px;
+  }
+
+  .fb-page {
+    @include media('>=767px') {
+      position: absolute;
+      top: 76px;
+      left: 170px;
+      width: 422px;
+      height: 410px;
+    }
+
+    @include media('>=960px') {
+      position: absolute;
+      top: 76px;
+      left: 240px;
+      width: 532px;
+    }
+  }
+}
