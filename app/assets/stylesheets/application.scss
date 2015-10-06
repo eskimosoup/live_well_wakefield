@@ -1,3 +1,8 @@
+/*
+ *= require slick.js/slick.scss
+ *= require slick.js/slick-theme.scss
+*/
+
 // Use this: http://dev.ghost.org/css-at-ghost/#namingthings
 // vendor: third-party styles
 // lib: SASS libraries, variables
@@ -10,5 +15,6 @@
 'components/navigation',
 'components/home_banner',
 'components/services',
+'components/client_stories',
 'layout/header',
 'layout/footer';
