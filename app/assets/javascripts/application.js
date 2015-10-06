@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require matchHeight
+//= require slick.js/slick.js
 //= require vendor/foundation/foundation.js
 //= require vendor/jquery-ui
 //= require vendor/doubleTapToGo
 //= require components/toggle_class
 
 $(function() {
-  $('.service').matchHeight();
   $('.primary-navigation-links').doubleTapToGo();
 });

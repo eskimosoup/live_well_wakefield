@@ -17,6 +17,10 @@ RSpec.describe ClientStoryPresenter, type: :presenter do
       expect(client_story_presenter.content).to eq(raw client_story.content)
     end
 
+    it "returns the service colour" do
+      expect(client_story_presenter.service_colour).to eq(client_story.service.colour)
+    end
+
     describe "date formatting" do
       it "should return the date with default format" do
         expect(client_story_presenter.date).to eq(l client_story.date, format: :default)

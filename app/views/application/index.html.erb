@@ -1,11 +1,31 @@
+<%= content_for :head do %>
+  <script>
+    $(function() {
+      $('.service').matchHeight();
+
+      $('.home-client-stories').slick({
+        infinite: true,
+        dots: false,
+        arrows: false,
+        autoplay: false,
+        autoplaySpeed: 4000
+      });
+    });
+  </script>
+<% end %>
+
 <div class="row">
   <div class="small-12 columns">
     <div class="home-banner">
       <h1>Supporting <em>healthy living</em> for the people of Wakefield</h1>
+
+      <div class="home-client-stories">
+        <%= render partial: 'client_stories/home_page', collection: @presented_home_client_stories, as: :client_story_presenter %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row collapse small-uncollapse">
+<div class="row collapse small-uncollapse medium-collapse">
   <%= render partial: 'services/service', collection: @presented_services, as: :service_presenter %>
 </div>

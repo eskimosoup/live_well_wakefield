@@ -1,0 +1,62 @@
+@mixin client-story-background($img) {
+  background-image: image-url($img);
+  background-position: center;
+  background-repeat:  no-repeat;
+  width: 369px;
+  height: 149px;
+  margin: em(100px) auto 0;
+
+  @include media('<369px') {
+    width: auto;
+  }
+}
+
+.home-client-story-blue {
+  @include client-story-background('components/client-stories/blue.png');
+}
+
+.home-client-story-green {
+  @include client-story-background('components/client-stories/green.png');
+}
+
+.home-client-story-turquoise {
+  @include client-story-background('components/client-stories/turquoise.png');
+}
+
+.home-client-story-red {
+  @include client-story-background('components/client-stories/red.png');
+}
+
+.home-client-story-purple {
+  @include client-story-background('components/client-stories/purple.png');
+}
+
+.home-client-story-yellow {
+  @include client-story-background('components/client-stories/yellow.png');
+}
+
+.home-client-story {
+  color: $white;
+
+  @include media('<tablet') {
+    padding: em(10px) em(20px) 0;
+  }
+
+  @include media('>phone') {
+    padding: em(27px) em(63px) em(20px) em(54px);
+    text-align: center;
+  }
+
+  p {
+    font-size: em(14px);
+    margin: 0;
+    line-height: 1.25;
+    overflow: hidden;
+    max-height: 103px;
+
+    @include media('<369px') {
+      margin: em(20px) (5px);
+      max-height: 123px;
+    }
+  }
+}

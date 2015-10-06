@@ -2,6 +2,10 @@ class ClientStoryPresenter < BasePresenter
   presents :client_story
   delegate :title, to: :client_story
 
+  def service_colour
+    client_story.service.colour
+  end
+
   def summary
     h.simple_format client_story.summary
   end

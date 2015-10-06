@@ -72,6 +72,7 @@ end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-matchHeight'
+  gem 'rails-assets-slick.js'
 end
 
 gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git', branch: 'master'
