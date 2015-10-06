@@ -67,7 +67,7 @@
 <%= f.select :service_id, Service.pluck(:name, :id), include_blank: 'No service' %>
 </div>
 
-    <div class="field<%= ' hide' if Page.styles.size < 2 %>">
+    <div class="field<%= ' hide' if Page.layouts.size < 2 %>">
       <%= f.label :layout %><br />
       <%= f.select :layout, Page.layouts.map{ |x| [t(x), x] } %>
     </div>
