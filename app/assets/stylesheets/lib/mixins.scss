@@ -1,0 +1,159 @@
+@mixin client-story-background($img) {
+  background-image: image-url($img);
+  background-position: center;
+  background-repeat:  no-repeat;
+  width: 369px;
+  height: 149px;
+  margin: em(100px) auto 0;
+
+  @include media('<369px') {
+    width: auto;
+  }
+}
+
+@mixin sidebar-navigation-colour($colour, $text-colour: $white) {
+  background: $colour;
+  color: $text-colour;
+
+  &:hover,
+  &.active {
+    background: darken($colour, 7%);
+    color: $text-colour;
+  }
+}
+
+@mixin sidebar-client-story($colour, $text-colour) {
+  &.#{$colour} {
+    .top {
+      background: image-url("components/client-stories/sidebar/#{$colour}-top.png") no-repeat;
+      height: 15px;
+      position: relative;
+
+      &:before {
+        font-family: Georgia, serif;
+        font-weight: bold;
+        content: '“';
+        color: darken($text-colour, 15%);
+        font-size: em(70px);
+        position: absolute;
+        top: -32px;
+        left: 20px;
+      }
+    }
+
+    .middle {
+      background: image-url("components/client-stories/sidebar/#{$colour}-middle.png") repeat-y;
+    }
+
+    .bottom {
+      background: image-url("components/client-stories/sidebar/#{$colour}-bottom.png") no-repeat;
+      height: 37px;
+      position: relative;
+
+      &:after {
+        font-family: Georgia, serif;
+        font-weight: bold;
+        content: '”';
+        color: darken($text-colour, 15%);
+        font-size: em(70px);
+        position: absolute;
+        bottom: -48px;
+        right: 12px;
+      }
+    }
+  }
+}
+
+@mixin service-background($color, $img, $align: center) {
+  background-color: $color;
+
+  @include media('>phone') {
+    background-image: image-url($img);
+    background-position: top $align;
+    background-repeat:  no-repeat;
+  }
+}
+
+
+@mixin page-content($name, $colour) {
+  &.#{$name} {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $colour;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:link {
+        color: darken($colour, 15%);
+      }
+
+      &:visited {
+        color: darken($colour, 15%);
+      }
+
+      &:hover {
+        color: $colour;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: $colour;
+      }
+    }
+
+
+    ul li {
+      list-style: none;
+      text-indent: -1em;
+      padding-left: em(14px);
+
+      &:before {
+        content: '•';
+        color: $colour;
+        padding: 0 em(8px, 18px) 0 0;
+        font-size: em(18px);
+      }
+    }
+  }
+}
+
+@mixin sidebar-contact-detail($name, $colour, $text-colour: $white) {
+  &.#{$name} {
+    border-color: $colour;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .small-paragraph-header {
+      background: $colour;
+      color: $text-colour;
+    }
+  }
+}
+
+@mixin client-story-read-more($name, $colour, $text-colour: $white) {
+  &.#{$name} {
+    background: darken($colour, 15%);
+  }
+}
+
+@mixin client-story($name, $colour, $text-colour: $white) {
+  &.#{$name} {
+    background: $colour;
+    color: $text-colour;
+    position: relative;
+
+    &:after {
+      background: $colour;
+    }
+  }
+}

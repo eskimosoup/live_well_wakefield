@@ -32,7 +32,7 @@ module Optimadmin
     end
 
     def edit_link
-      h.link_to pencil, h.polymorphic_url([:edit, object]), class: 'menu-item-control'
+      h.link_to pencil, h.polymorphic_url(object), class: 'menu-item-control'
     end
 
     def delete_link

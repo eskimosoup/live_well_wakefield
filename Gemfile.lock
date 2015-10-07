@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:eskimosoup/Optimadmin.git
-  revision: 03cf4db37b6e7954e68be0f31731e4d0ac2a30a3
+  revision: 4464b20cfdad7bdf04e079775e2f9e216d4689ce
   branch: master
   specs:
     optimadmin (0.0.10)
@@ -112,7 +112,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    faraday (0.9.1)
+    faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     fast_stack (0.1.0)
       rake

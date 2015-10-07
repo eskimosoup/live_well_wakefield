@@ -1,21 +1,25 @@
-<section class="separated-section page lightest-grey-background">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="content-box">
+<div class="row">
+  <div class="small-12 columns">
+    <div class="page-title">
+      <div class="page-title-text">
         <h1>Contact Us</h1>
-
-        <div class="content-wrap">
-          <%= render 'shared/flash_messages' %>
-          <% if @contact_detail %>
-            <% @presented_contact_detail.name %>
-            <%= @presented_contact_detail.address %>
-            <%= @presented_contact_detail.postcode %>
-            <%= @presented_contact_detail.phone_number %>
-            <%= @presented_contact_detail.opening_hours %>
-          <% end %>
-          <%= render "form" %>
-        </div>
       </div>
+
+      <%= image_tag 'layout/pages/page-title-background.jpg', alt: '', class: 'page-title-background' %>
     </div>
   </div>
-</section>
+</div>
+
+<div class="page-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Contact Us</h2>
+
+      <p>Please use the form below to send an email to us.</p>
+
+      <%= render 'shared/flash_messages' %>
+
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.field_with_errors {
+  label {
+    font-weight: $open-sans-bold;
+  }
+
+  input,
+  select,
+  textarea {
+    border: 1px solid $primary-yellow;
+  }
+}
+
+.button,
+input[type='submit'] {
+  border: 0;
+  background: $primary-blue;
+  color: $white;
+  padding: em(8px) em(16px);
+
+  &:hover {
+    background: lighten($primary-blue, 15%);
+  }
+}

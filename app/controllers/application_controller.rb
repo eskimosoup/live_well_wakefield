@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+  before_action :global_site_settings, :load_objects
 
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render_error 404
@@ -10,12 +14,6 @@ class ApplicationController < ActionController::Base
       format.all { render nothing: true, status: status }
     end
   end
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-  before_action :global_site_settings, :load_objects
 
   def index
     @presented_services = BaseCollectionPresenter.new(collection: Service.positioned.displayed, view_template: view_context, presenter: ServicePresenter)

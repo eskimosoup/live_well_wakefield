@@ -5,9 +5,12 @@
     <%= render 'optimadmin/shared/module/index/new_item', title: 'Client Story', object: ClientStory, path: new_client_story_path %>
     <%= render 'optimadmin/shared/search_form' %>
     <%= render 'optimadmin/shared/module/index/pagination' %>
+    <%= render 'optimadmin/shared/service_filter' %>
     <!--
       <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
     -->
+
+
     <%= render 'optimadmin/shared/module/index/recycle_bin', items: @client_stories.size, path: root_url %>
   </div>
 
@@ -20,9 +23,10 @@
     <%= link_to octicon('chevron-down'), '#', class: 'helper-link index-list-expand-all', data: { this_class: 'octicon-chevron-up octicon-chevron-down' } %>
     Title
   <% end %>
-  <%= list_item 'large-3 small-8' do 'Service name' end %>
+  <%= list_item 'large-2 small-8' do 'Service name' end %>
 
 
+    <%= list_item 'large-1 hide-for-medium-down' do 'Image' end %>
     <%= list_item { 'Display' } %>
     <%= list_item { 'Highlight' } %>
     <%= list_item { 'View' } %>

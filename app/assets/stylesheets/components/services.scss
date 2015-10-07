@@ -1,13 +1,3 @@
-@mixin service-background($color, $img, $align: center) {
-  background-color: $color;
-
-  @include media('>phone') {
-    background-image: image-url($img);
-    background-position: top $align;
-    background-repeat:  no-repeat;
-  }
-}
-
 .service-blue {
   @include service-background($blue, 'components/services/blue.png', right);
 }

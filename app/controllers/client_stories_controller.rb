@@ -3,11 +3,13 @@ class ClientStoriesController < ApplicationController
   before_action :find_client_story, only: :show
 
   def index
-
+    return redirect_to service_client_stories_path(@service), status: :moved_permanently if request.path != service_client_stories_path(@service)
+    @presented_client_stories = BaseCollectionPresenter.new(collection: @service.client_stories.displayed.positioned, view_template: view_context, presenter: ClientStoryPresenter)
   end
 
   def show
     return redirect_to service_client_story_path(@service, @client_story), status: :moved_permanently if request.path != service_client_story_path(@service, @client_story)
+    @presented_contact_detail = ContactDetailPresenter.new(object: @service.contact_detail, view_template: view_context) if @service && @service.contact_detail
   end
 
   private

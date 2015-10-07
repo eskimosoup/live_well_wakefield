@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  include MenuResourceable
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :history, :scoped], scope: :service_id
 
@@ -11,6 +12,7 @@ class Page < ActiveRecord::Base
   # before_save :store_file, if: Proc.new{|page| page.remote_file_url.blank? }
 
   scope :displayed, -> { where(display: true) }
+  scope :service, -> (service_id) { where(service_id: service_id) if service_id.present? }
 
   validates :title, :content, presence: true
   validates :title, uniqueness: { scope: :service_id, message: 'already exists for this page' }

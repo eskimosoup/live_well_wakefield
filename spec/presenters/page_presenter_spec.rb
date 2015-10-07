@@ -14,6 +14,15 @@ RSpec.describe PagePresenter, type: :presenter do
     end
   end
 
+  describe "page with service" do
+    let(:page) { build(:page_with_service) }
+    subject(:page_presenter) { PagePresenter.new(object: page, view_template: view)}
+
+    it "returns the service colour" do
+      expect(page_presenter.service_colour).to eq(page.service.colour)
+    end
+  end
+
   describe "images" do
     describe "no image" do
       it "show_image should return nil" do
