@@ -1,3 +1,4 @@
+/*
 .home-banner {
   background: image-url('components/home/home-banner.png') no-repeat center;
   margin: 0 auto em(10px);
@@ -28,4 +29,32 @@
       font-weight: $open-sans-bold;
     }
   }
+}
+*/
+
+.home-animated-banner {
+  position: relative;
+  height: 443px;
+  overflow: hidden;
+}
+
+.home-sprites {
+  background: image-url('layout/home/sprites.png') no-repeat;
+  background-position: 0 bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 328px;
+}
+
+.home-background {
+  background: image-url('layout/home/bg.png') repeat-x 0 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 443px;
+  z-index: 0;
 }

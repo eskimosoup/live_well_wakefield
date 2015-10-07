@@ -30,7 +30,8 @@
       position: relative;
 
       &:before {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Georgia, serif;
+        font-weight: bold;
         content: '“';
         color: darken($text-colour, 15%);
         font-size: em(70px);
@@ -50,12 +51,13 @@
       position: relative;
 
       &:after {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Georgia, serif;
+        font-weight: bold;
         content: '”';
         color: darken($text-colour, 15%);
         font-size: em(70px);
         position: absolute;
-        bottom: -38px;
+        bottom: -48px;
         right: 12px;
       }
     }

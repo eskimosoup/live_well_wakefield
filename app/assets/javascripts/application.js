@@ -18,6 +18,7 @@
 //= require vendor/jquery-ui
 //= require vendor/doubleTapToGo
 //= require components/toggle_class
+//= require components/home_animated_banner
 
 $(function() {
   $('.primary-navigation-links').doubleTapToGo();
