@@ -7,9 +7,9 @@ var backwards;
 function runAnimation() {
   console.log(parseInt($('.home-sprites').css('background-position-x')));
 
-  if(parseInt($('.home-sprites').css('background-position-x')) == -1560) {
+  if(parseInt($('.home-sprites').css('background-position-x')) == -1950) {
     backwards = true;
-  } else if(parseInt($('.home-sprites').css('background-position-x')) == 0) {
+  } else if(parseInt($('.home-sprites').css('background-position-x')) === 0) {
     backwards = false;
   }
 
