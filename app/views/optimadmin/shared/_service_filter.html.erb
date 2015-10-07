@@ -1,0 +1,7 @@
+<%= form_tag '', method: :get do %>
+  <%= hidden_field_tag :per_page, params[:per_page] %>
+  <%= hidden_field_tag :order, params[:order] %>
+  <%= hidden_field_tag :search, params[:search] %>
+  <%= select_tag :service_id, options_for_select(Service.all.map{|x| [x.name, x.id]}, selected: params[:service_id]),
+  class: 'submit-on-change', prompt: 'Service filter' %>
+<% end %>

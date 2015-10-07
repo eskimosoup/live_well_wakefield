@@ -14,9 +14,13 @@
   <% end %>
 
   <div class="row">
-    <div class="small-12 columns field">
+    <div class="small-12 medium-6 columns field">
       <%= f.label :name %>
       <%= f.text_field :name %>
+    </div>
+    <div class="small-12 medium-6 columns field">
+      <%= f.label :service_id %>
+      <%= f.select :service_id, Service.pluck(:name, :id), prompt: 'Please select a service' %>
     </div>
   </div>
 
@@ -39,7 +43,7 @@
   </div>
 
   <div class="actions">
-    <%= f.hidden_field :service_id, value: @service.id if @service.present? %>
+    <%#= f.hidden_field :service_id, value: @service.id if @service.present? %>
     <%= f.submit "Send", class: "button" %>
   </div>
 <% end %>

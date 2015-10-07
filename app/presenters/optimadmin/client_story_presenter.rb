@@ -16,7 +16,27 @@ module Optimadmin
     end
 
     def service_name
-      client_story.service.name
+      service.name
+    end
+
+    def service
+      client_story.service
+    end
+
+    def view_link(nested = nil)
+      begin
+        h.link_to eye, h.main_app.polymorphic_url([nested, object]), class: 'menu-item-control'
+      rescue
+        ''
+      end
+    end
+
+    def edit_link
+      h.link_to pencil, h.edit_client_story_path(object.id), class: 'menu-item-control'
+    end
+
+    def delete_link
+      h.link_to trash_can, h.client_story_path(object.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'menu-item-control'
     end
   end
 end

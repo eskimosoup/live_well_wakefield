@@ -5,4 +5,8 @@ class PagePresenter < BasePresenter
   def content
     h.raw page.content
   end
+
+  def service_colour
+    page.service.colour if page.service
+  end
 end

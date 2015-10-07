@@ -1,0 +1,82 @@
+.page-title {
+  position: relative;
+  height: 213px;
+  overflow: hidden;
+
+  @include media('<tablet') {
+    position: static;
+    height: auto;
+  }
+}
+
+.page-title-text {
+  background: image-url('components/services/page-titles/primary-blue.png') no-repeat left center;
+  width: 100%;
+
+  @include media('>=tablet') {
+    height: 162px;
+    position: absolute;
+    width: 433px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: em(23px);
+    color: $white;
+    font-weight: normal;
+    padding: em(23px, 23px);
+
+    @include media('<tablet') {
+      padding: em(11px, 23px);
+    }
+  }
+
+  &.blue {
+    background: image-url('components/services/page-titles/blue.png') no-repeat left center;
+  }
+
+  &.green {
+    background: image-url('components/services/page-titles/green.png') no-repeat left center;
+  }
+
+  &.turquoise {
+    background: image-url('components/services/page-titles/turquoise.png') no-repeat left center;
+  }
+
+  &.red {
+    background: image-url('components/services/page-titles/red.png') no-repeat left center;
+  }
+
+  &.purple {
+    background: image-url('components/services/page-titles/purple.png') no-repeat left center;
+  }
+
+  &.yellow {
+    background: image-url('components/services/page-titles/yellow.png') no-repeat left center;
+  }
+}
+
+.page-title-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @include media('<tablet') {
+    display: none;
+  }
+}
+
+.page-content {
+  @include page-content('blue', $blue);
+  @include page-content('green', $green);
+  @include page-content('turquoise', $turquoise);
+  @include page-content('red', $red);
+  @include page-content('purple', $purple);
+  @include page-content('yellow', $yellow);
+}
+
+.fb-page {
+  margin: 0 0 em(53px);
+}

@@ -21,7 +21,7 @@
   <div class="tabs prevent-flash">
     <ul class="tab-list">
       <li><a href="#tabs-1">Content</a></li>
-      <!-- <li><a href="#tabs-2">Media</a></li> -->
+      <li><a href="#tabs-2">Media</a></li>
       <li><a href="#tabs-3">Settings</a></li>
       <li>
         <%= link_to '#', class: 'destroy-tabs right', data: { class: 'tabs' } do %>
@@ -44,9 +44,9 @@
       </div>
           <% end %>
 
-    <%#= field_set_tag nil, id: 'tabs-2' do %>
-
-          <% #end %>
+    <%= field_set_tag nil, id: 'tabs-2' do %>
+    <%= f.image_field :image %>
+          <% end %>
 
     <%= field_set_tag nil, id: 'tabs-3' do %>
 

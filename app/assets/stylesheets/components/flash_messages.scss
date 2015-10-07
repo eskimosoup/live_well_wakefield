@@ -1,0 +1,46 @@
+.flash-message {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-size: em(15px);
+  margin: em(18px) 0 0;
+  padding: em(4px, 15px) em(6px, 15px);
+
+  &.inline {
+    display: inline-block;
+    margin: em(5px, 15px) 0;
+  }
+
+  &.notice {
+    background: $green;
+    border-color: $primary-yellow;
+    color: $white;
+  }
+
+  &.alert,
+  &.error {
+    background: $red;
+    border-color: $purple;
+    color: $black;
+    font-weight: $open-sans-bold;
+  }
+}
+
+.error_messages,
+#error_explanation {
+  background: $red;
+  border-color: $purple;
+  border-style: solid;
+  border-width: 1px;
+  color: black;
+  font-size: em(15px);
+  font-weight: bold;
+  margin: em(5px, 15px) 0;
+  padding: em(4px, 15px) em(6px, 15px);
+
+  h2 {
+    font-size: em(16px);
+    font-weight: normal;
+    margin: 0;
+  }
+}

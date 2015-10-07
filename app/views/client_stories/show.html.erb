@@ -1,2 +1,33 @@
-<h1>ClientStories#show</h1>
-<p>Find me in app/views/client_stories/show.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="page-title">
+      <div class="page-title-text <%= @presented_service.colour %>">
+        <h1><%= @presented_client_story.title %></h1>
+      </div>
+
+      <%= image_tag 'layout/pages/page-title-background.jpg', alt: '', class: 'page-title-background' %>
+    </div>
+  </div>
+</div>
+
+<div class="client-story-show-content page-content">
+  <div class="row">
+    <div class="medium-9 columns <%= @presented_service.colour %>">
+      <%= @presented_client_story.show_image(alt: @presented_client_story.title, class: 'image-right') %>
+
+      <%= @presented_client_story.summary %>
+      
+      <%= @presented_client_story.content %>
+
+      <%= link_to 'View all client stories', service_client_stories_path(@service), class: "client-story-read-more #{@presented_service.colour}" %>
+    </div>
+
+    <% if @presented_contact_detail.present? || (@presented_service.present? && @presented_service.facebook.present?) %>
+      <div class="medium-3 columns">
+        <%= render partial: 'contact_details/contact_detail', locals: { contact_detail_presenter: @presented_contact_detail, service_colour: @presented_service.colour } if @presented_contact_detail.present? %>
+
+        <%= sidebar_facebook_helper(@presented_service.facebook) if @presented_service.facebook.present? %>
+      </div>
+    <% end %>
+  </div>
+</div>

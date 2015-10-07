@@ -4,6 +4,7 @@ RSpec.describe ClientStory, type: :model do
   describe "validations", :validation do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:summary) }
+    it { should validate_presence_of(:date) }
     it { should validate_uniqueness_of(:suggested_url).scoped_to(:service_id).allow_blank.case_insensitive.with_message("is already taken, leave blank to generate automatically") }
   end
 

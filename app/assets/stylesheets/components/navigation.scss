@@ -4,7 +4,7 @@
   margin: 0;
   padding: em(12px) em(15px);
 
-  @include media('>phone') {
+  @include media('>=tablet') {
     @include border-radius(12px 12px 0 0);
     display: inline-block;
     float: right;
@@ -16,7 +16,7 @@
   }
 
   .top-level {
-    @include media('>phone') {
+    @include media('>=tablet') {
       border-right: 1px solid $white;
       display: inline-block;
 
@@ -66,14 +66,14 @@
   }
 }
 
-.has-dropdown {
+.top-level.has-dropdown {
   background: image-url('components/icons/dropdown-expand.png') no-repeat 90% center;
   padding-right: em(16px);
 
   &:hover {
     background-image: image-url('components/icons/dropdown-collapse.png');
 
-    .dropdown {
+    .dropdown.depth-1 {
       display: block;
     }
   }
@@ -128,7 +128,7 @@
   .menu-item {
     display: block;
 
-    @include media('>phone') {
+    @include media('>=tablet') {
       float: left;
       width: 33%;
     }
@@ -137,5 +137,57 @@
   a {
     background: image-url('components/icons/subnav-arrow.png') no-repeat left center;
     padding: em(10px) em(20px);
+  }
+}
+
+.sidebar-navigation {
+  a {
+    display: block;
+    color: $white;
+    padding: em(12px);
+    margin: em(2px) 0;
+    text-decoration: none;
+
+    @include media('<tablet') {
+      padding: em(6px);
+    }
+
+    @include sidebar-navigation-colour($primary-blue);
+  }
+
+  &.blue a {
+    @include sidebar-navigation-colour($blue);
+  }
+
+  &.green a {
+    @include sidebar-navigation-colour($green);
+  }
+
+  &.turquoise a {
+    @include sidebar-navigation-colour($turquoise);
+  }
+
+  &.red a {
+    @include sidebar-navigation-colour($red);
+  }
+
+  &.purple a {
+    @include sidebar-navigation-colour($purple);
+  }
+
+  &.yellow a {
+    @include sidebar-navigation-colour($yellow);
+  }
+}
+
+.sidebar-navigation-links {
+  list-style: none;
+
+  li:first-of-type a {
+    @include border-radius(6px 6px 0 0);
+  }
+
+  li:last-of-type a {
+    @include border-radius(0 0 6px 6px);
   }
 }

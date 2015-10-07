@@ -1,2 +1,21 @@
-<h1>ClientStories#index</h1>
-<p>Find me in app/views/client_stories/index.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="page-title">
+      <div class="page-title-text <%= @presented_service.colour %>">
+        <h1>Client Stories</h1>
+      </div>
+
+      <%= image_tag 'layout/pages/page-title-background.jpg', alt: '', class: 'page-title-background' %>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="client-stories <%= @presented_service.colour %>">
+        <%= render partial: 'client_stories/client_story', collection: @presented_client_stories, as: :client_story_presenter %>
+      </div>
+    </div>
+  </div>
+</div>

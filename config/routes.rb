@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :pages, only: :show
 
   resources :services, only: [], path: '' do
-    resources :client_stories, path: 'client-story'
+    resources :client_stories, path: 'client-stories'
   end
 
   mount Optimadmin::Engine => "/admin"
@@ -36,9 +36,6 @@ Optimadmin::Engine.routes.draw do
       get 'toggle'
     end
   end
-  get 'client_stories/index'
-
-  get 'client_stories/show'
 
   resources :client_stories, except: [:show] do
     collection do
@@ -46,6 +43,10 @@ Optimadmin::Engine.routes.draw do
     end
     member do
       get 'toggle'
+      get 'edit_images'
+      post 'update_image_default'
+      post 'update_image_fill'
+      post 'update_image_fit'
     end
   end
   resources :services, except: [:show] do

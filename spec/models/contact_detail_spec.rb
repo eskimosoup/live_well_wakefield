@@ -5,6 +5,7 @@ RSpec.describe ContactDetail, type: :model do
     subject(:service) { build(:service) }
     subject(:contact_detail) { build(:contact_detail, service: service) }
     it { should validate_presence_of(:form_email_addresses) }
+    it { should validate_presence_of(:details) }
     it { should validate_uniqueness_of(:service_id).with_message("already has a contact detail") }
   end
 

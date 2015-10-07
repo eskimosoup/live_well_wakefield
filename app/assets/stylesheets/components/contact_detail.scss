@@ -1,0 +1,30 @@
+.sidebar-contact-details {
+  @include border-radius(6px);
+  @include sidebar-contact-detail('blue', $blue);
+  @include sidebar-contact-detail('green', $green);
+  @include sidebar-contact-detail('turquoise', $turquoise);
+  @include sidebar-contact-detail('red', $red);
+  @include sidebar-contact-detail('purple', $purple);
+  @include sidebar-contact-detail('yellow', $yellow);
+
+  border-width: 1px;
+  border-style: dashed;
+  margin: 0 0 em(53px);
+
+  @include media('<tablet') {
+    margin: em(27px) 0;
+  }
+
+  .inner {
+    padding: 0 em(10px) em(20px);
+  }
+
+  h4 {
+    @include border-radius(6px 6px 0 0);
+    font-size: em(23px);
+    font-weight: normal;
+    margin: 0;
+    padding: em(20px, 23px) em(12px, 23px) em(12px, 23px);
+    text-align: center;
+  }
+}
