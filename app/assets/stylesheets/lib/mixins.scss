@@ -64,6 +64,26 @@
   }
 }
 
+@mixin home-client-story($colour, $text-colour) {
+  &.#{$colour} {
+    .top {
+      background: image-url("components/client-stories/sidebar/#{$colour}-top.png") no-repeat;
+      height: 15px;
+      position: relative;
+    }
+
+    .middle {
+      background: image-url("components/client-stories/sidebar/#{$colour}-middle.png") repeat-y;
+    }
+
+    .bottom {
+      background: image-url("components/client-stories/sidebar/#{$colour}-bottom.png") no-repeat;
+      height: 37px;
+      position: relative;
+    }
+  }
+}
+
 @mixin service-background($color, $img, $align: center) {
   background-color: $color;
 

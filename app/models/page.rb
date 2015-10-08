@@ -13,10 +13,11 @@ class Page < ActiveRecord::Base
 
   scope :displayed, -> { where(display: true) }
   scope :service, -> (service_id) { where(service_id: service_id) if service_id.present? }
-
+  
   validates :title, :content, presence: true
   validates :title, uniqueness: { scope: :service_id, message: 'already exists for this page' }
   validates :suggested_url, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already taken, leave blank to generate automatically' }
+  validates :service_main_page, presence: true, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already set' }
 
   before_save :update_service_from_client_story, if: "self.client_story.present? && self.client_story.service != self.service"
   before_save :update_page_name

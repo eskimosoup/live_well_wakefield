@@ -1,36 +1,42 @@
-/*
 .home-banner {
-  background: image-url('components/home/home-banner.png') no-repeat center;
+  background: image-url('components/home/home-banner.png') no-repeat top center;
   margin: 0 auto em(10px);
   min-height: 367px;
+}
 
-  h1 {
-    color: $primary-blue;
-    display: block;
-    text-align: center;
-    font-size: em(24px);
+.home-banner-title {
+  color: $primary-blue;
+  display: block;
+  text-align: center;
+  font-size: em(24px);
+  position: relative;
+  z-index: 3;
+  font-weight: $open-sans-bold;
 
-    @include media('<tablet') {
-      padding: em(15px, 24px) 0;
-    }
+  @include media('<tablet') {
+    padding: em(15px, 24px) 0;
+  }
 
-    @include media('>phone') {
-      width: 45%;
-      margin: 0 auto;
-      padding: em(29px, 24px) 0;
-    }
+  @include media('>phone') {
+    width: 45%;
+    margin: 0 auto;
+    padding: em(29px, 24px) 0;
+  }
 
-    @include media('>=desktop') {
-      width: 37%;
-    }
+  @include media('>=desktop') {
+    width: 37%;
+  }
 
-    em {
-      color: $green;
-      font-weight: $open-sans-bold;
-    }
+  em {
+    color: $green;
+    font-weight: $open-sans-bold;
   }
 }
-*/
+
+.home-client-stories {
+  position: relative;
+  z-index: 4;
+}
 
 .home-animated-banner {
   position: relative;

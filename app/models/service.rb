@@ -17,6 +17,10 @@ class Service < ActiveRecord::Base
   COLOURS = ['blue', 'green', 'turquoise', 'red', 'purple', 'yellow']
   validates :colour, inclusion: { in: COLOURS }
 
+  def main_page    
+    pages.find_by("pages.service_main_page = ?", true)
+  end
+
   def slug_candidates
     [
       :suggested_url,
