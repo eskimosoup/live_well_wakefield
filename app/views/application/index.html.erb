@@ -3,12 +3,11 @@
     $(function() {
       $('.service').matchHeight();
 
-      $('.home-client-stories').slick({
+      $('.home-client-stories, .home-client-stories-static').slick({
         infinite: true,
         dots: false,
         arrows: false,
-        autoplay: false,
-        autoplaySpeed: 4000
+        autoplay: false
       });
     });
   </script>
@@ -23,23 +22,27 @@
 <% end %>
 <div id="fb-root"></div>
 
-<!--
-<div class="row">
+<div class="row show-for-small">
   <div class="small-12 columns">
     <div class="home-banner">
-      <h1>Supporting <em>healthy living</em> for the people of Wakefield</h1>
+      <div class="home-banner-title">Supporting <em>healthy living</em> for the people of Wakefield</div>
 
-      <div class="home-client-stories">
+      <div class="home-client-stories-static">
         <%= render partial: 'client_stories/home_page', collection: @presented_home_client_stories, as: :client_story_presenter %>
       </div>
     </div>
   </div>
 </div>
--->
 
-<div class="row  collapse">
+<div class="row  hide-for-small collapse">
   <div class="small-12 columns">
     <div class="home-animated-banner">
+      <h1 class="home-banner-title">Supporting <em>healthy living</em> for the people of Wakefield</h1>
+
+      <div class="home-client-stories">
+        <%= render partial: 'client_stories/home_page', collection: @presented_home_client_stories, as: :client_story_presenter %>
+      </div>
+
       <div class="home-sprites" max-position="-627">
 
       </div>

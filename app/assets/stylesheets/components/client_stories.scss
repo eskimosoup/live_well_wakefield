@@ -1,4 +1,4 @@
-.home-client-story-blue {
+/*.home-client-story-blue {
   @include client-story-background('components/client-stories/blue.png');
 }
 
@@ -47,9 +47,33 @@
     }
   }
 }
-
+*/
 .home-client-stories.slick-slider {
   margin: 0;
+}
+
+.home-client-story {
+  @include home-client-story('blue', $blue);
+  @include home-client-story('green', $green);
+  @include home-client-story('turquoise', $turquoise);
+  @include home-client-story('red', $red);
+  @include home-client-story('purple', $purple);
+  @include home-client-story('yellow', $yellow);
+
+  max-width: 241px;
+  margin: em(56px) auto;
+
+  @include media('<tablet') {
+    margin: em(28px) 0;
+  }
+
+  p {
+    color: $white;
+    font-size: em(14px);
+    margin: 0;
+    padding: em(15px) em(30px);
+    text-align: center;
+  }
 }
 
 .sidebar-client-story {

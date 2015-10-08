@@ -25,14 +25,19 @@
 .service {
   font-weight: $open-sans-bold;
   font-size: em(14px);
-  color: $white;
 
-  @include media('>phone') {
-    padding: em(40px) em(10px);
-    text-align: center;
-  }
+  a {
+    display: block;
+    color: $white;
+    text-decoration: none;
 
-  @include media('<tablet') {
-    padding: em(10px) em(20px);
+    @include media('>phone') {
+      padding: em(40px) em(10px);
+      text-align: center;
+    }
+
+    @include media('<tablet') {
+      padding: em(10px) em(20px);
+    }
   }
 }

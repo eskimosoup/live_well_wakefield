@@ -1,5 +1,9 @@
 <div>
-  <div class="home-client-story home-client-story-<%= client_story_presenter.service_colour %>">
-    <%= client_story_presenter.summary %>
+  <div class="home-client-story <%= client_story_presenter.service_colour %>">
+    <div class="top"></div>
+    <div class="middle">
+      <%= client_story_presenter.summary %>
+    </div>
+    <div class="bottom"></div>
   </div>
 </div>

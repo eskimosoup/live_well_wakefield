@@ -86,6 +86,11 @@
       <%= f.label :display %><br />
       <%= f.check_box :display %>
     </div>
+
+          <div class="field">
+      <%= f.label :service_main_page %> <%= module_tooltip('Main page for service links', 'When the service is linked to on its own (e.g. home page), it will link to the service main page.') %><br>
+      <%= f.check_box :service_main_page %>
+    </div>
   <% end %>
   </div>
 
