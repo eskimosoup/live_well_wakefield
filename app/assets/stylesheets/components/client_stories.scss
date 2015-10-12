@@ -106,6 +106,10 @@
   z-index: 1;
 }
 
+.lt-ie10 .client-story-content:after {
+  display: none;
+}
+
 .client-story-content {
   @include client-story('blue', $blue);
   @include client-story('green', $green);
@@ -135,7 +139,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    transform: rotate(45deg); /* Prefixes... */
+    transform: rotate(45deg);
     bottom: -15px;
     left: 25px;
     z-index: -1;
