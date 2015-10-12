@@ -5,6 +5,10 @@ $(function() {
 
 
 function runAnimation() {
+  $('.home-client-stories').fadeOut(500, function() {
+    $('.home-client-stories').slick('slickNext');
+  });
+
   if(parseInt($('.home-sprites').css('background-position-x')) == -1560) {
     backwards = true;
   } else if(parseInt($('.home-sprites').css('background-position-x')) === 0) {
@@ -13,16 +17,18 @@ function runAnimation() {
 
   if(backwards === true) {
     $('.home-background').animate({ 'background-position-x': "+=78" }, 500);
-    $('.home-sprites').animate({ 'background-position-x': "+=390" }, 500);
+    $('.home-sprites').animate({ 'background-position-x': "+=390" }, 500, function() {
+      $('.home-client-stories').fadeIn(500);
+    });
   } else {
     $('.home-background').animate({ 'background-position-x': "-=78" }, 500);
-    $('.home-sprites').animate({ 'background-position-x': "-=390" }, 500);
+    $('.home-sprites').animate({ 'background-position-x': "-=390" }, 500, function() {
+      $('.home-client-stories').fadeIn(500);
+    });
   }
 
   clearInterval(interval);
-  interval = setInterval(runAnimation, 2000);
-
-  $('.home-client-stories').slick('slickNext');
+  interval = setInterval(runAnimation, 4000);
 }
 
 $(window).blur(function(){
@@ -30,5 +36,5 @@ $(window).blur(function(){
 });
 
 $(window).focus(function(){
-  interval = setInterval(runAnimation, 2000);
+  interval = setInterval(runAnimation, 4000);
 });

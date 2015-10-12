@@ -7,7 +7,9 @@
         infinite: true,
         dots: false,
         arrows: false,
-        autoplay: false
+        autoplay: false,
+        fade: true,
+        speed: 500
       });
     });
   </script>
@@ -39,8 +41,10 @@
     <div class="home-animated-banner">
       <h1 class="home-banner-title">Supporting <em>healthy living</em> for the people of Wakefield</h1>
 
-      <div class="home-client-stories">
-        <%= render partial: 'client_stories/home_page', collection: @presented_home_client_stories, as: :client_story_presenter %>
+      <div class="home-client-stories-wrap">
+        <div class="home-client-stories">
+          <%= render partial: 'client_stories/home_page', collection: @presented_home_client_stories, as: :client_story_presenter %>
+        </div>
       </div>
 
       <div class="home-sprites" max-position="-627">
