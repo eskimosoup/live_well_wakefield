@@ -73,6 +73,10 @@
     margin: 0;
     padding: em(15px) em(30px);
     text-align: center;
+
+    @include media('<tablet') {
+      padding: em(7px) em(15px);
+    }
   }
 }
 
