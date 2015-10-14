@@ -4,7 +4,9 @@ RSpec.describe Service, type: :model do
   describe "validations", :validation do
     subject(:service) { build(:service) }
     it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:question) }
     it { should validate_uniqueness_of(:name) }
+    it { should validate_uniqueness_of(:question) }
     it { should validate_uniqueness_of(:colour) }
     it { should validate_inclusion_of(:colour).in_array(Service::COLOURS) }
     it { should validate_uniqueness_of(:suggested_url).allow_blank.case_insensitive.with_message("is already taken, leave blank to generate automatically") }
