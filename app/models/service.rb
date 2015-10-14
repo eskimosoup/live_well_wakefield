@@ -9,7 +9,7 @@ class Service < ActiveRecord::Base
   scope :positioned, -> { order(:position) }
   scope :displayed, -> { where(display: true) }
 
-  validates :name, :colour, presence: true, uniqueness: true
+  validates :name, :colour, :question, presence: true, uniqueness: true
   validates :suggested_url, uniqueness: { message: "is already taken, leave blank to generate automatically" }, allow_blank: true, if: Proc.new{|x| x.suggested_url.present? }
 
   mount_uploader :image, ServiceUploader
@@ -17,7 +17,7 @@ class Service < ActiveRecord::Base
   COLOURS = ['blue', 'green', 'turquoise', 'red', 'purple', 'yellow']
   validates :colour, inclusion: { in: COLOURS }
 
-  def main_page    
+  def main_page
     pages.find_by("pages.service_main_page = ?", true)
   end
 
