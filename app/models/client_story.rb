@@ -3,7 +3,7 @@ class ClientStory < ActiveRecord::Base
   friendly_id :slug_candidates, use: [:slugged, :history, :scoped], scope: :service
 
   belongs_to :service
-  has_many :pages
+  has_many :pages, dependent: :nullify
 
 
   scope :displayed, -> { where("display = ? and date <= ?", true, Date.today) }

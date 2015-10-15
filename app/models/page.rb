@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   friendly_id :slug_candidates, use: [:slugged, :history, :scoped], scope: :service_id
 
   belongs_to :service
-  belongs_to :client_story
+  belongs_to :client_story, -> { displayed }
 
   mount_uploader :image, PageUploader
 
@@ -13,18 +13,18 @@ class Page < ActiveRecord::Base
 
   scope :displayed, -> { where(display: true) }
   scope :service, -> (service_id) { where(service_id: service_id) if service_id.present? }
-  
+
   validates :title, :content, presence: true
   validates :title, uniqueness: { scope: :service_id, message: 'already exists for this page' }
   validates :suggested_url, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already taken, leave blank to generate automatically' }
   validates :service_main_page, presence: true, allow_blank: true, uniqueness: { scope: :service_id, message: 'is already set' }
 
   before_save :update_service_from_client_story, if: "self.client_story.present? && self.client_story.service != self.service"
-  before_save :update_page_name
+  #before_save :update_page_name
 
-  def update_service_from_client_story
-    self.service_id = self.client_story.service_id
-  end
+  #def update_service_from_client_story
+  #  self.service_id = self.client_story.service_id
+  #end
 
   def update_page_name
     if self.service_id.present?

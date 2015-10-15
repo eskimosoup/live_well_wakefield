@@ -58,12 +58,12 @@
   <%= field_set_tag nil, id: 'tabs-3' do %>
 
     <div class="field">
-  <%= f.label :client_story_id %> <%= module_tooltip('This will set the service', 'A page will automatically inherit its service from the client story, if one is selected.') %><br>
+  <%= f.label :client_story_id %><br />
   <%= f.select :client_story_id, grouped_options_for_select(ClientStory.joins(:service).group_by(&:service).map{|x| [x[0].name, x[1].map{|y| [y.title, y.id]}]}, selected: @page.client_story_id), include_blank: 'No client story' %>
   </div>
 
   <div class="field">
-<%= f.label :service_id %> <%= module_tooltip('Only applicable when there is no client story', 'A page will automatically inherit its service from the client story, if one is selected.') %><br>
+<%= f.label :service_id %><br>
 <%= f.select :service_id, Service.pluck(:name, :id), include_blank: 'No service' %>
 </div>
 

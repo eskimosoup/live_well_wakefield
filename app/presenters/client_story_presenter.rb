@@ -15,7 +15,7 @@ class ClientStoryPresenter < BasePresenter
   end
 
   def read_more
-    return nil unless client_story.content
+    return nil unless client_story.content.present?
     h.link_to 'Read more', h.service_client_story_path(client_story.service.id, client_story.id), class: "client-story-read-more #{client_story.service.colour}", title: "Read more #{title}"
   end
 

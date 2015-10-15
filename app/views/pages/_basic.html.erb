@@ -12,24 +12,26 @@
 
 <div class="page-content">
   <div class="row">
-    <% if @side_menus.present? %>
+    <% if @side_menus.present? && (@side_menus.last.has_children?(@page) || !@side_menus.last.root_menu_item?(@page)) %>
       <div class="medium-3 columns sidebar-navigation  <%= @presented_page.service_colour %>">
         <%= link_to '#', class: 'toggle-class text-center show-for-small', data: { container: '.sidebar-navigation-links', class: 'hide-for-small' } do %>
           Show Navigation
         <% end %>
 
         <ul class="sidebar-navigation-links hide-for-small">
-          <%= nested_menu_items(menu_items: @side_menus.last.child_menu_items(@page)) if @side_menus.last.has_children?(@page)  %>
-          <%= nested_menu_items(menu_items: @side_menus.last.sibling_menu_items(@page)) unless @side_menus.last.has_children?(@page) %>
+          <%= nested_menu_items(menu_items: @side_menus.last.child_menu_items(@page)) if @side_menus.present? && @side_menus.last.has_children?(@page)  %>
+          <%= nested_menu_items(menu_items: @side_menus.last.sibling_menu_items(@page)) unless @side_menus.last.has_children?(@page) || @side_menus.last.root_menu_item?(@page) %>
         </ul>
 
-        <div class="sidebar-client-story <%= @presented_page.service_colour %>">
-          <div class="top"></div>
-          <div class="middle">
-            <%= @presented_client_story.summary %>
+        <% if @presented_client_story.present? %>
+          <div class="sidebar-client-story <%= @presented_page.service_colour %>">
+            <div class="top"></div>
+            <div class="middle">
+              <%= @presented_client_story.summary %>
+            </div>
+            <div class="bottom"></div>
           </div>
-          <div class="bottom"></div>
-        </div>
+        <% end %>
       </div>
     <% end %>
 
