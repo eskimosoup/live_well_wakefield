@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :services, only: [], path: '' do
     resources :client_stories, path: 'client-stories'
+    get '/testimonials', to: "client_stories#testimonials", as: 'testimonials'
   end
 
   mount Optimadmin::Engine => "/admin"
