@@ -51,14 +51,17 @@
 }
 
 .home-sprites {
-  background: image-url('layout/home/sprites.png') no-repeat;
   background-position: 0 bottom;
   position: absolute;
-  bottom: 0;
+  bottom: 89px;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 328px;
+
+  img {
+    max-width: none;
+  }
 }
 
 .home-background {
@@ -69,4 +72,8 @@
   width: 100%;
   height: 443px;
   z-index: 0;
+
+  img {
+    max-width: none;
+  }
 }

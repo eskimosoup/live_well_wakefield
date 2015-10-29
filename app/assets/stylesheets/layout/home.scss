@@ -1,6 +1,6 @@
 .facebook {
   position: relative;
-  margin: em(20px) 0;
+  margin: em(20px) auto;
 
   @include media('>=767px') {
     background: image-url('components/home/facebook-background-tablet.png') no-repeat;

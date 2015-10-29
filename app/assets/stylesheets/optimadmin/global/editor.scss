@@ -103,4 +103,15 @@ p {
   font-weight: $open-sans-bold;
   text-align: center;
   padding: em(4px);
+
+  a {
+    color: $white;
+    
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $white;
+    }
+  }
 }

@@ -9,20 +9,20 @@ function runAnimation() {
     $('.home-client-stories').slick('slickNext');
   });
 
-  if(parseInt($('.home-sprites').css('background-position-x')) == -1560) {
+  if(parseInt($('.home-sprites').css('left')) == -1560) {
     backwards = true;
-  } else if(parseInt($('.home-sprites').css('background-position-x')) === 0) {
+  } else if(parseInt($('.home-sprites').css('left')) === 0) {
     backwards = false;
   }
 
   if(backwards === true) {
-    $('.home-background').animate({ 'background-position-x': "+=78" }, 500);
-    $('.home-sprites').animate({ 'background-position-x': "+=390" }, 500, function() {
+    $('.home-background').animate({ 'left': "+=58px" }, 500);
+    $('.home-sprites').animate({ 'left': "+=390px" }, 500, function() {
       $('.home-client-stories').fadeIn(500);
     });
   } else {
-    $('.home-background').animate({ 'background-position-x': "-=78" }, 500);
-    $('.home-sprites').animate({ 'background-position-x': "-=390" }, 500, function() {
+    $('.home-background').animate({ 'left': "-=58px" }, 500);
+    $('.home-sprites').animate({ 'left': "-=390px" }, 500, function() {
       $('.home-client-stories').fadeIn(500);
     });
   }
