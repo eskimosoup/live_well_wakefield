@@ -22,7 +22,7 @@
   }
 }
 
-@mixin sidebar-client-story($colour, $text-colour) {
+@mixin sidebar-client-story($colour, $quote-colour, $text-colour: $white) {
   &.#{$colour} {
     .top {
       background: image-url("components/client-stories/sidebar/#{$colour}-top.png") no-repeat;
@@ -33,7 +33,7 @@
         font-family: Georgia, serif;
         font-weight: bold;
         content: '“';
-        color: darken($text-colour, 15%);
+        color: darken($quote-colour, 15%);
         font-size: em(70px);
         position: absolute;
         top: -32px;
@@ -43,6 +43,10 @@
 
     .middle {
       background: image-url("components/client-stories/sidebar/#{$colour}-middle.png") repeat-y;
+
+      p {
+        color: darken($text-colour, 15%);
+      }
     }
 
     .bottom {
@@ -54,7 +58,7 @@
         font-family: Georgia, serif;
         font-weight: bold;
         content: '”';
-        color: darken($text-colour, 15%);
+        color: darken($quote-colour, 15%);
         font-size: em(70px);
         position: absolute;
         bottom: -48px;
