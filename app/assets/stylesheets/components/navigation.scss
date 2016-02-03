@@ -160,7 +160,7 @@
   }
 
   &.green a {
-    @include sidebar-navigation-colour($green);
+    @include sidebar-navigation-colour($green, $black);
   }
 
   &.turquoise a {
@@ -176,7 +176,7 @@
   }
 
   &.yellow a {
-    @include sidebar-navigation-colour($yellow);
+    @include sidebar-navigation-colour($yellow, $black);
   }
 }
 

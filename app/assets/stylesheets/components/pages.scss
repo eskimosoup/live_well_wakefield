@@ -39,6 +39,10 @@
 
   &.green {
     background: image-url('components/services/page-titles/green.png') no-repeat left center;
+
+    h1 {
+      color: $black;
+    }
   }
 
   &.turquoise {
@@ -55,6 +59,10 @@
 
   &.yellow {
     background: image-url('components/services/page-titles/yellow.png') no-repeat left center;
+
+    h1 {
+      color: $black;
+    }
   }
 }
 

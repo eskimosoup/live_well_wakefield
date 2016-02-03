@@ -82,11 +82,11 @@
 
 .sidebar-client-story {
   @include sidebar-client-story('blue', $blue);
-  @include sidebar-client-story('green', $green);
+  @include sidebar-client-story('green', $green, $black);
   @include sidebar-client-story('turquoise', $turquoise);
   @include sidebar-client-story('red', $red);
   @include sidebar-client-story('purple', $purple);
-  @include sidebar-client-story('yellow', $yellow);
+  @include sidebar-client-story('yellow', $yellow, $black);
 
   max-width: 241px;
   margin: em(56px) 0;
