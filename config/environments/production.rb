@@ -1,12 +1,16 @@
 Rails.application.configure do
   config.logger = Logger.new(config.paths['log'].first, 3, 5242880)
 
-  Rails.application.routes.default_url_options[:host] = 'wakefield.ludo5.co.uk'
+  Rails.application.routes.default_url_options[:host] = 'livewellwakefield.nhs.uk/'
 
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.sendmail_settings = {
-    location: '/usr/lib/sendmail'
-    arguments: '-i'
+  config.action_mailer.smtp_settings = { enable_starttls_auto: false }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address: 'mail.optimised.today',
+    authentication: :plain,
+    user_name: 'noreply@optimised.today',
+    password: 'LudoStudio47#!poip​'
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
