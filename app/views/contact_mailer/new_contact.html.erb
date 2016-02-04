@@ -8,6 +8,12 @@
   </p>
 <% end %>
 
+<% if @service.present? %>
+  <p>
+    <strong>Service</strong> <%= @service.name %>
+  </p>
+<% end %>
+
 <% if @contact.phone_number %>
   <p>
     <strong>Phone Number</strong> <%= @contact.phone_number %>
