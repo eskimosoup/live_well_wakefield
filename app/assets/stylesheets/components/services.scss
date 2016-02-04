@@ -30,6 +30,7 @@
     display: block;
     color: $white;
     text-decoration: none;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 1);
 
     @include media('>phone') {
       padding: em(40px) em(10px);
