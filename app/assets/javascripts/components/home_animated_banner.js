@@ -1,8 +1,8 @@
 var backwards, interval;
+
 $(function() {
   interval = setInterval(runAnimation, 4000);
 });
-
 
 function runAnimation() {
   $('.home-client-stories').fadeOut(500, function() {
@@ -31,10 +31,11 @@ function runAnimation() {
   interval = setInterval(runAnimation, 4000);
 }
 
-$(window).blur(function(){
-  clearInterval(interval);
-});
-
-$(window).focus(function(){
-  interval = setInterval(runAnimation, 4000);
+$.winFocus({
+  blur: function(event) {
+    clearInterval(interval);
+  },
+  focus: function(event) {
+    interval = setInterval(runAnimation, 4000);
+  }
 });

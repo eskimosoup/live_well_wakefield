@@ -44,7 +44,6 @@ group :development do
   gem 'spring'
 end
 
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.5.0'
@@ -68,7 +67,6 @@ group :development do
   gem 'stackprof', '~> 0.2.7'
   gem 'bullet', '~> 4.14.7'
 end
-
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-matchHeight'
