@@ -1,7 +1,8 @@
 var backwards, interval;
+var timeDelay = 8000;
 
 $(function() {
-  interval = setInterval(runAnimation, 4000);
+  interval = setInterval(runAnimation, timeDelay);
 });
 
 function runAnimation() {
@@ -28,7 +29,7 @@ function runAnimation() {
   }
 
   clearInterval(interval);
-  interval = setInterval(runAnimation, 4000);
+  interval = setInterval(runAnimation, timeDelay);
 }
 
 $.winFocus({
@@ -36,6 +37,6 @@ $.winFocus({
     clearInterval(interval);
   },
   focus: function(event) {
-    interval = setInterval(runAnimation, 4000);
+    interval = setInterval(runAnimation, timeDelay);
   }
 });
