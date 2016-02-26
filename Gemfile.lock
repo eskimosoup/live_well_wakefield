@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:eskimosoup/Optimadmin.git
-  revision: aafe810730c45da6495c64ab9d680927848995cb
+  revision: 9358fa8b1bd20dcc8e560f1e5fb3fe36f031aa82
   branch: master
   specs:
-    optimadmin (0.0.14)
+    optimadmin (0.0.16)
       bcrypt
       cancancan
       carrierwave
@@ -20,9 +20,9 @@ GIT
 
 GIT
   remote: git@github.com:eskimosoup/optimadmin_generators.git
-  revision: 6c01ff746aa38fd266269749f949e213758ef584
+  revision: 9ffd68d0c2264512015e4a4482ba6df11861b048
   specs:
-    optimadmin_generators (0.4.2)
+    optimadmin_generators (0.4.5)
 
 GEM
   remote: https://rubygems.org/
@@ -63,7 +63,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
+    addressable (2.3.8)
     arel (6.0.3)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
@@ -93,7 +93,7 @@ GEM
     closure_tree (6.0.0)
       activerecord (>= 4.1.0)
       with_advisory_lock (>= 3.0.0)
-    coderay (1.1.0)
+    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -118,8 +118,8 @@ GEM
     fast_stack (0.1.0)
       rake
       rake-compiler
-    fastimage (1.8.1)
-      addressable (~> 2.3, >= 2.3.5)
+    fastimage (1.9.0)
+      addressable (~> 2.3.5)
     ffi (1.9.10)
     flamegraph (0.1.0)
       fast_stack
@@ -162,26 +162,26 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     i18n (0.7.0)
-    jbuilder (2.4.0)
+    jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jquery-rails (4.1.0)
+    jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.2)
+    jwt (1.5.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.13)
-    listen (3.0.5)
+    listen (3.0.6)
       rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
+      rb-inotify (>= 0.9.7)
     little-plugger (1.1.4)
     logging (2.0.0)
       little-plugger (~> 1.1)
@@ -193,13 +193,13 @@ GEM
       mime-types (>= 1.16, < 3)
     memoist (0.14.0)
     method_source (0.8.2)
-    mime-types (2.99)
-    mini_magick (4.3.6)
+    mime-types (2.99.1)
+    mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
     multipart-post (2.0.0)
-    nenv (0.2.0)
+    nenv (0.3.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -234,7 +234,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5.1)
       sprockets-rails
-    rails-assets-jquery (2.2.0)
+    rails-assets-jquery (2.2.1)
     rails-assets-matchHeight (0.7.0)
     rails-assets-slick.js (1.5.9)
       rails-assets-jquery (>= 1.7)
@@ -255,16 +255,17 @@ GEM
     rake-compiler (0.9.5)
       rake
     rb-fsevent (0.9.7)
-    rb-inotify (0.9.5)
+    rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    rdoc (4.2.1)
+    rdoc (4.2.2)
+      json (~> 1.4)
     ref (2.0.0)
     retriable (1.4.1)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.2)
+    rspec-core (3.4.3)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -302,11 +303,11 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slop (3.6.0)
-    spring (1.6.2)
+    spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.1)
+    sprockets-rails (3.0.3)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -353,7 +354,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   guard-rspec (~> 4.6.4)
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (= 4.0.5)
   launchy (~> 2.4.3)
   optimadmin!
   optimadmin_generators!
