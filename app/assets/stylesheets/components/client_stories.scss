@@ -71,7 +71,7 @@
     color: $white;
     font-size: em(14px);
     margin: 0;
-    padding: em(2px) em(31px);
+    padding: 0 em(20px);
     text-align: center;
 
     @include media('<tablet') {
