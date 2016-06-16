@@ -10,7 +10,7 @@ Rails.application.configure do
     address: 'mail.optimised.today',
     authentication: :plain,
     user_name: 'noreply@optimised.today',
-    password: 'LudoStudio47#!poip​'
+    password: 'LudoStudio47#!poip'
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
