@@ -1,7 +1,7 @@
 class ApplicationMailer < ActionMailer::Base
 
   layout 'mailer'
-  default from: Proc.new{ site_email }
+  default from: 'noreply@optimised.today'
 
   def site_email
     @site_email = begin
