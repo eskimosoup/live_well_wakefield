@@ -37,6 +37,9 @@
 
     <div class="<%= grid_classes(@side_menus, @presented_contact_detail, @presented_service) %> <%= @presented_page.service_colour %>">
       <%= @presented_page.content %>
+      <% if @page.id == 3 %>
+        <script type="text/javascript" src="//www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=RXG&data-host=www.cqc.org.uk&type=provider"></script>
+      <% end %>
     </div>
 
     <% if @presented_contact_detail.present? || (@presented_service.present? && @presented_service.facebook.present?) %>
