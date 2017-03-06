@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.logger = Logger.new(config.paths['log'].first, 3, 5242880)
+  config.logger = Logger.new(config.paths['log'].first, 3, 5_242_880)
 
   Rails.application.routes.default_url_options[:host] = 'livewellwakefield.nhs.uk/'
 
@@ -10,7 +10,7 @@ Rails.application.configure do
     address: 'mail.optimised.today',
     authentication: :plain,
     user_name: 'noreply@optimised.today',
-    password: 'LudoStudio47#!poip'
+    password: ENV['NOREPLY_PASSWORD']
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
