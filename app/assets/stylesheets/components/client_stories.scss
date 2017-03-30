@@ -89,6 +89,7 @@
   @include sidebar-client-story('yellow', $yellow, $black);
 
   max-width: 241px;
+  text-align: center;
   //margin: em(56px) 0;
 
   @include media('<tablet') {
