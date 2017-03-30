@@ -1,6 +1,6 @@
 module PageHelper
-  def grid_classes(sidebar_menu, contact_detail, service)
-    if sidebar_menu.present? && (contact_detail.present? || (service.present? && service.facebook.present?))
+  def grid_classes(sidebar_menu, contact_detail, service, presented_client_story)
+    if sidebar_menu.present? || presented_client_story.present? && (contact_detail.present? || (service.present? && service.facebook.present?))
       'medium-6 columns'
     elsif ((contact_detail.blank? || (service.present? && service.facebook.present?)) && sidebar_menu.present?) || (sidebar_menu.blank? && (contact_detail.present? || (service.present? && service.facebook.present?)))
       'medium-9 columns'
