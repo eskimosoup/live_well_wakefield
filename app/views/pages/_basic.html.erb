@@ -39,7 +39,7 @@
     <% end %>
 
     <!-- <div class="<%= grid_classes(@side_menus, @presented_contact_detail, @presented_service, @presented_client_story) %> <%= @presented_page.service_colour %>"> -->
-    <div class="<%= (@side_menus.present? && (@side_menus.last.has_children?(@page) || !@side_menus.last.root_menu_item?(@page))) || (@presented_client_story.present?) ? 'medium-6' : 'medium-9' %> columns">
+    <div class="<%= (@side_menus.present? && (@side_menus.last.has_children?(@page) || !@side_menus.last.root_menu_item?(@page))) || (@presented_client_story.present?) ? 'medium-6' : 'medium-9' %> columns <%= (@presented_contact_detail.present? || (@presented_service.present? && @presented_service.facebook.present?)) ? '' : 'end' %>">
       <%= @presented_page.content %>
       <% if @page.id == 9 %>
         <script type="text/javascript" src="//www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=RXG&data-host=www.cqc.org.uk&type=provider"></script>
