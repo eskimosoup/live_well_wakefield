@@ -141,7 +141,7 @@
 }
 
 .sidebar-navigation {
-  a {
+  a:not(.client-story-read-more) {
     display: block;
     color: $white;
     padding: em(12px);
