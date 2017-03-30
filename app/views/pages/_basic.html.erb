@@ -37,7 +37,7 @@
       </div>
     <% end %>
 
-    <div class="<%= grid_classes(@side_menus, @presented_contact_detail, @presented_service) %> <%= @presented_page.service_colour %>">
+    <div class="<%= grid_classes(@side_menus, @presented_contact_detail, @presented_service, @presented_client_story) %> <%= @presented_page.service_colour %>">
       <%= @presented_page.content %>
       <% if @page.id == 9 %>
         <script type="text/javascript" src="//www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=RXG&data-host=www.cqc.org.uk&type=provider"></script>
