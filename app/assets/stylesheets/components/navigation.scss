@@ -155,27 +155,27 @@
     @include sidebar-navigation-colour($primary-blue);
   }
 
-  &.blue a {
+  &.blue a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($blue);
   }
 
-  &.green a {
+  &.green a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($green, $black);
   }
 
-  &.turquoise a {
+  &.turquoise a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($turquoise);
   }
 
-  &.red a {
+  &.red a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($red);
   }
 
-  &.purple a {
+  &.purple a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($purple);
   }
 
-  &.yellow a {
+  &.yellow a:not(.client-story-read-more) {
     @include sidebar-navigation-colour($yellow, $black);
   }
 }

@@ -47,6 +47,11 @@
       p {
         color: darken($text-colour, 15%);
       }
+
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
     }
 
     .bottom {
