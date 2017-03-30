@@ -60,6 +60,17 @@
 
 <div class="row collapse small-uncollapse medium-collapse">
   <%= render partial: 'services/service', collection: @presented_services, as: :service_presenter %>
+
+  <div class="large-2 medium-4 small-12 columns">
+    <div class="service service-blue">
+      <%= link_to 'I want to become a volunteer', '/pages/i-want-to-become-a-volunteer' %>
+    </div>
+  </div>
+  <div class="large-2 medium-4 small-12 columns">
+    <div class="service service-yellow">
+      <%= link_to 'Meet the team', '/pages/team-members' %>
+    </div>
+  </div>
 </div>
 
 <div class="row">
