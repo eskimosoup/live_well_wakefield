@@ -20,7 +20,7 @@
     </div>
     <div class="small-12 medium-6 columns field">
       <%= f.label :service_id %>
-      <%= f.select :service_id, Service.pluck(:name, :id), prompt: 'Please select a service' %>
+      <%= f.select :service_id, Service.displayed.pluck(:name, :id), prompt: 'Please select a service' %>
     </div>
   </div>
 
