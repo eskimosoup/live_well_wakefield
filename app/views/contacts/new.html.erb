@@ -17,6 +17,10 @@
 
       <p>Please use the form below to send an email to us.</p>
 
+      <% if global_site_settings['Phone'] %>
+        <p>You can call us on <%= global_site_settings['Phone'] %>.</p>
+      <% end %>
+
       <%= render 'shared/flash_messages' %>
 
       <%= render "form" %>

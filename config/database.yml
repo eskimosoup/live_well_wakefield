@@ -24,9 +24,9 @@ default: &default
 development:
   <<: *default
   database: live_well_wakefield_development
-  host: localhost
-  username: paul
-  password:
+  host: 192.168.0.41
+  username: postgres
+  password: tmedia
 
 
   # The specified database role being used to connect to postgres.
@@ -62,9 +62,9 @@ development:
 test:
   <<: *default
   database: live_well_wakefield_test
-  host: localhost
-  username: paul
-  password:
+  host: 192.168.0.41
+  username: postgres
+  password: tmedia
 
 
 # As with config/secrets.yml, you never want to store sensitive information,
