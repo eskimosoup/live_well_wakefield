@@ -10,10 +10,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.valid? && @service.present?
       ContactMailer.new_contact(@contact, @service).deliver_now
-      redirect_to new_contact_path, notice: "Thank you for contacting #{@service.name}"
+      redirect_to new_contact_path, notice: "Thank you for contacting the Live Well team"
     elsif @contact.valid?
       ContactMailer.new_contact(@contact, nil).deliver_now
-      redirect_to new_contact_path, notice: "Thank you for contacting us"
+      redirect_to new_contact_path, notice: "Thank you for contacting the Live Well team"
     else
       render :new
     end
