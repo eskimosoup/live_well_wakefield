@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
 
-  layout 'mailer'
+  layout nil
   default from: 'noreply@optimised.today'
 
   def site_email
