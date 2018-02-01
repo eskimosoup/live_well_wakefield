@@ -26,9 +26,5 @@ module LiveWellWakefield
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-
-    config.action_mailer.logger = ActiveSupport::Logger.new(
-      Rails.root.join('log', 'mailer.log')
-    )
   end
 end
