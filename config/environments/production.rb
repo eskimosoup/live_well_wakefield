@@ -14,12 +14,9 @@ Rails.application.configure do
   #}
 
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.office365.com',
-    user_name: 'noreply@wearemy.co.uk',
+    address: 'wearemy-co-uk.mail.protection.outlook.com',
     domain: 'wearemy.co.uk',
-    password: ENV['MY_PASSWORD'],
-    authentication: :login,
-    port: 587,
+    port: 25,
     enable_starttls_auto: true
   }
 
