@@ -1,7 +1,8 @@
 class ApplicationMailer < ActionMailer::Base
 
   layout nil
-  default from: 'noreply@optimised.today'
+  # default from: 'noreply@optimised.today'
+  default from: 'paul@wearemy.co.uk'
 
   def site_email
     @site_email = begin
