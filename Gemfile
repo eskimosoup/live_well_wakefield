@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda-matchers', '~> 2.8.0'
   gem 'shoulda-callback-matchers'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -74,3 +75,4 @@ end
 
 gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git', branch: 'master'
 gem 'friendly_id', '~> 5.1.0'
+gem 'recaptcha', require: "recaptcha/rails"
