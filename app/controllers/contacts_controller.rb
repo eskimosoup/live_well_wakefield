@@ -2,10 +2,12 @@
 
 class ContactsController < ApplicationController
   def new
+    @facade = Contacts::NewFacade.new
     @contact = Contact.new
   end
 
   def create
+    @facade = Contacts::NewFacade.new
     @contact = Contact.new(contact_params)
     if verified_contact?(@contact)
       ContactMailer.new_contact(@contact).deliver_now

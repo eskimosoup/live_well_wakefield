@@ -17,7 +17,11 @@
   <%= field_set_tag nil, id: 'tabs-1' do %>
     <div class="field">
       <%= f.label :area %><br>
-      <%= f.select :area, AdditionalContent::AREAS, prompt: t('helpers.select.prompt')  %>
+        <% if f.object.new_record? %>
+        <%= f.select :area, AdditionalContent::AREAS.reject { |x| AdditionalContent.pluck(:area).include? x }, prompt: t('helpers.select.prompt')  %>
+      <% else %>
+        <%= f.select :area, AdditionalContent::AREAS, prompt: t('helpers.select.prompt')  %>
+      <% end %>
     </div>
     <div class="field">
       <%= f.label :content %><br>
