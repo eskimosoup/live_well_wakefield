@@ -94,7 +94,7 @@
   <p> <%= Referral.human_attribute_name(:preferred_contact_method) %></p>
   <%#= f.select :preferred_contact_method, Referral::PREFERED_CONTACT_METHOD %>
   <%= f.collection_check_boxes(:preferred_contact_method, Referral::PREFERED_CONTACT_METHOD, :first, :last) do |c| %>
-    <%= c.label(:"data-value" => c.value) { c.check_box + c.text }%>
+    <%= c.label(:"data-value" => c.value) { c.check_box(class: 'checkbox') + c.text }%>
   <% end %>
 </div>
 
@@ -108,6 +108,8 @@
   <%= f.check_box :consent_confirmation %>
 </div>
 
+<%= recaptcha_tags %>
+
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit "Submit" %>
 </div>
