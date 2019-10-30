@@ -14,22 +14,15 @@
   <% end %>
 
   <div class="row">
-    <div class="small-12 medium-6 columns field">
+    <div class="small-12 medium-4 columns field">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
-    <div class="small-12 medium-6 columns field">
-      <%= f.label :service_id %>
-      <%= f.select :service_id, Service.displayed.pluck(:name, :id), prompt: 'Please select a service' %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-6 columns field">
+    <div class="small-12 medium-4 columns field">
       <%= f.label :phone_number %>
       <%= f.telephone_field :phone_number %>
     </div>
-    <div class="small-12 medium-6 columns field">
+    <div class="small-12 medium-4 columns field">
       <%= f.label :email %>
       <%= f.email_field :email %>
     </div>

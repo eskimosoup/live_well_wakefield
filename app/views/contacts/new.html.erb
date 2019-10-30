@@ -2,7 +2,9 @@
   <div class="small-12 columns">
     <div class="page-title">
       <div class="page-title-text">
-        <h1>Contact Us</h1>
+        <% if @facade.additional_content? %>
+          <h1><%= @facade.additional_content.title %></h1>
+        <% end %>
       </div>
 
       <%= image_tag 'layout/pages/page-title-background.jpg', alt: '', class: 'page-title-background' %>
@@ -13,12 +15,8 @@
 <div class="page-content">
   <div class="row">
     <div class="small-12 columns">
-      <h2>Contact Us</h2>
-
-      <p>Please use the form below to send an email to us.</p>
-
-      <% if global_site_settings['Phone'] %>
-        <p>You can call us on <%= global_site_settings['Phone'] %>.</p>
+      <% if @facade.additional_content? %>
+        <%= raw @facade.additional_content.content %>
       <% end %>
 
       <%= render 'shared/flash_messages' %>

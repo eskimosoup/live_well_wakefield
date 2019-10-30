@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="small-12 columns">
+    <div class="page-title">
+      <div class="page-title-text">
+        <% if @facade.additional_content? %>
+          <h1><%= @facade.additional_content.title %></h1>
+        <% end %>
+      </div>
+
+      <%= image_tag 'layout/pages/page-title-background.jpg', alt: '', class: 'page-title-background' %>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <% if @facade.additional_content? %>
+        <%= raw @facade.additional_content.content %>
+      <% end %>
+
+      <%= render 'shared/flash_messages' %>
+
+      <%= render "form", model: @referral %>
+    </div>
+  </div>
+</div>

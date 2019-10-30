@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :date_of_birth %>
+      <%= f.date_field :date_of_birth %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>
+  </div>
+  <div class="small-12 large-4 columns">
+    <div class="field">
+      <%= f.label :email_address %>
+      <%= f.email_field :email_address %>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <%= f.label :address %>
+  <%= f.text_area :address %>
+</div>
+<div class="field">
+  <%= f.label :postcode %>
+  <%= f.text_field :postcode %>
+</div>
+
+<div class="field">
+  <%= f.label :registered_gp_practice %>
+  <%= f.text_area :registered_gp_practice %>
+</div>
+
+<div class="field">
+  <%= f.label :referred_by %>
+  <%= f.select :referred_by, Referral::REFERS, { prompt: t('helpers.select.prompt') }, { class: 'toggle-select', data: { class: 'referral-toggle' } } %>
+</div>
+
+<div class="referral-toggle hide" data-referral-value="Self/Carer/Friend/Family">
+  <div class="field">
+  <%= f.object.referred_by %>
+    <%= f.label :referree_name_person %>
+    <%= f.text_field :referree_name_person  %>
+  </div>
+  <div class="field">
+    <%= f.label :referree_relationship %>
+    <%= f.text_field :referree_relationship %>
+  </div>
+</div>
+
+<div class="referral-toggle hide" data-referral-value="Professional">
+  <div class="field">
+    <%= f.label :referree_name_professional %>
+    <%= f.text_field :referree_name_professional %>
+  </div>
+  <div class="field">
+    <%= f.label :referree_job_title %>
+    <%= f.text_field :referree_job_title %>
+  </div>
+  <div class="field">
+    <%= f.label :referree_work_address %>
+    <%= f.text_area :referree_work_address %>
+  </div>
+  <div class="field">
+    <%= f.label :referree_contact_number %>
+    <%= f.text_field :referree_contact_number %>
+  </div>
+</div>
+
+<div class="field">
+  <p> <%= Referral.human_attribute_name(:preferred_contact_method) %></p>
+  <%#= f.select :preferred_contact_method, Referral::PREFERED_CONTACT_METHOD %>
+  <%= f.collection_check_boxes(:preferred_contact_method, Referral::PREFERED_CONTACT_METHOD, :first, :last) do |c| %>
+    <%= c.label(:"data-value" => c.value) { c.check_box + c.text }%>
+  <% end %>
+</div>
+
+
+<div class="field">
+  <%= f.label :referral_reason_and_support_needs %>
+  <%= f.text_area :referral_reason_and_support_needs %>
+</div>
+<div class="field">
+  <%= f.label :consent_confirmation %>
+  <%= f.check_box :consent_confirmation %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>

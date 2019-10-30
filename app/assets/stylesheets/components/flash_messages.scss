@@ -26,6 +26,29 @@
   }
 }
 
+
+.form-errors {
+  background: $red;
+  border-color: $purple;
+  border-style: solid;
+  border-width: 1px;
+  color: $black;
+  cursor: pointer;
+  font-size: em(15px);
+  font-weight: $open-sans-bold;
+  margin: em(18px) 0 0;
+  padding: em(4px, 15px) em(6px, 15px);
+
+  &__title {
+    font-size: em(24px, 16px);
+    margin-bottom: em(16px, 24px);
+  }
+
+  &__messages {
+    margin-bottom: 0;
+  }
+}
+
 .error_messages,
 #error_explanation {
   background: $red;

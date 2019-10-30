@@ -21,3 +21,7 @@ input[type='submit'] {
     background: lighten($primary-blue, 15%);
   }
 }
+
+.field_with_errors {
+  display: inline;
+}
