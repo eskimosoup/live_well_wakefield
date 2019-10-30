@@ -15,7 +15,7 @@
 //= require matchHeight
 //= require slick.js/slick.js
 //= require vendor/foundation/foundation.js
-//= require vendor/jquery-ui
+//= require vendor/frontend-jquery-ui
 //= require vendor/doubleTapToGo
 //= require vendor/winfocus
 //= require components/toggle_class

@@ -1,4 +1,17 @@
 en:
+  activemodel:
+    attributes:
+      referral:
+        registered_gp_practice: Registered GP Practice
+        referree_name_person: Name
+        referree_name_professional: Name
+        referree_relationship: Relationship to person being referred
+        referree_job_title: Job title
+        referree_work_address: Work address
+        referree_contact_number: Contact number
+        referral_reason_and_support_needs: |
+          Please give a description of the reason for referral and support needs, please inform us of any risks or reasonable adjustments we may need to consider to help us to communicate better with the person being referred
+        consent_confirmation: Please tick this box to confirm that you have consent to refer the individual to Live Well Wakefield
   date:
     abbr_day_names:
     - Sun

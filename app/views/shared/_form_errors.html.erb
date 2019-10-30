@@ -1,0 +1,16 @@
+
+<% if object.errors.any? %>
+  <div class="form-errors">
+    <h2 class="form-errors__title"><%= t("errors.template.header.#{object.errors.count > 1 ? 'other' : 'one'}",
+                  count: object.errors.count,
+                  model: (defined?(form_name) ? form_name : object.model_name.human.downcase)
+                ) %></h2>
+    <ul class="form-errors__messages">
+      <% object.errors.full_messages.each do |message| %>
+        <li class="form-errors__message">
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

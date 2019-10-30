@@ -1,0 +1,25 @@
+<%= render 'optimadmin/shared/header/main_title', title: t('optimadmin.views.module.index.title', model_name: AdditionalContent.model_name.human.pluralize.titleize) %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: AdditionalContent.model_name.human.titleize, object: AdditionalContent, path: { action: :new } %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!-- <%= render 'optimadmin/shared/module/index/order', options: [['A-Z', 'title ASC'], ['Z-A', 'title DESC'], ['Displayed', 'display DESC'], ['Hidden', 'display ASC']] %> -->
+    <!-- <%= render 'optimadmin/shared/module/index/recycle_bin', items: @additional_contents.size, path: root_url %> -->
+  </div>
+
+  <div class="row collapse module-list-index header">
+        <%= list_item('') { 'Title' } %>
+        <%= list_item('large-1 small-4 text-center') { 'Display' } %>
+    <%= list_item('large-1 small-4 text-center') { 'View' } %>
+    <%= list_item('large-1 small-4 text-center') { 'Edit' } %>
+    <%= list_item('large-1 text-center last') { 'Delete' } %>
+  </div>
+
+    <!-- <div class="module-sortable" data-module="AdditionalContent"> -->
+  <%= render partial: 'additional_content', collection: @additional_contents, as: :additional_content, cached: true %>
+  <!-- </div> -->
+  
+  <%= paginate @additional_contents %>
+</div>

@@ -1,0 +1,6 @@
+<%= render 'optimadmin/shared/help_guides/sidebar', object: AdditionalContent, area: 'new' %>
+<%= render 'optimadmin/shared/header/main_title', title: "New #{AdditionalContent.model_name.human.titleize}" %>
+<div class="main-content">
+  <%= render 'optimadmin/shared/module/form/back', path: { action: :index }, title: AdditionalContent.model_name.human.titleize %>
+  <%= render 'form', model: @additional_content %>
+</div>
