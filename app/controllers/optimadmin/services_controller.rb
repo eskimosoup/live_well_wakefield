@@ -38,6 +38,8 @@ module Optimadmin
     def destroy
       @service.destroy
       redirect_to services_url, notice: 'Service was successfully destroyed.'
+    rescue ActiveRecord::InvalidForeignKey
+      redirect_to services_url, flash: { error: 'This item is still referenced in one or many client stories, pages or contact details.' }
     end
 
   private
