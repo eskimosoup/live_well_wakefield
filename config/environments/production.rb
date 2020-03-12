@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.logger = Logger.new(config.paths['log'].first, 3, 5_242_880)
 
-  Rails.application.routes.default_url_options[:host] = 'livewellwakefield.nhs.uk'
+  Rails.application.routes.default_url_options[:host] = 'www.livewellwakefield.nhs.uk'
   Rails.application.routes.default_url_options[:protocol] = 'https'
 
   config.action_mailer.default_url_options = {
