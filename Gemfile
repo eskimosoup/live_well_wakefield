@@ -49,3 +49,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-matchHeight'
   gem 'rails-assets-slick.js'
 end
+
+group :development do
+  gem 'capistrano', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rbenv', require: false
+  gem 'capistrano-passenger', require: false
+end

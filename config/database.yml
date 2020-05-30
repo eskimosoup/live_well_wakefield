@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: live_well_wakefield_development
-  host: 192.168.0.41
+  host: localhost
   username: postgres
   password: tmedia
 
