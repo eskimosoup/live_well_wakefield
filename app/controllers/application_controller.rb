@@ -4,16 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :global_site_settings, :load_objects
 
-  rescue_from ActiveRecord::RecordNotFound do |exception|
-    render_error 404
-  end
-
-  def render_error(status)
-    respond_to do |format|
-      format.html { render 'errors/404', status: status }
-      format.all { render nothing: true, status: status }
-    end
-  end
+  include Optimadmin::ErrorReporting
 
   def index
     @presented_services = BaseCollectionPresenter.new(collection: Service.positioned.displayed, view_template: view_context, presenter: ServicePresenter)
