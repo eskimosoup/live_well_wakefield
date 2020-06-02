@@ -18,5 +18,7 @@ namespace :ping_host do
       )
       puts [uri, response.code].join(' ')
     end
+  rescue StandardError => e
+    puts e
   end
 end
