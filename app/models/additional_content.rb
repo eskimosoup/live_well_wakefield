@@ -5,7 +5,8 @@ class AdditionalContent < ActiveRecord::Base
 
   AREAS = [
     'Contact Us',
-    'Referral Form'
+    'Referral Form',
+    'Waiting Well Form'
   ].freeze
 
   validates :area, uniqueness: true, inclusion: { in: AREAS }

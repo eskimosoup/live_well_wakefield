@@ -1,0 +1,30 @@
+<h1>New Waiting Well Form Submission</h1>
+<% [:title,
+      :first_name,
+      :last_name,
+      :date_of_birth,
+      :phone_number,
+      :email_address,
+      :address,
+      :postcode,
+      :registered_gp_practice,
+      :referred_by,
+      :referree_name_person,
+      :referree_name_professional,
+      :referree_relationship,
+      :referree_job_title,
+      :referree_work_address,
+      :referree_contact_number,
+      :referral_reason_and_support_needs].each do |field| %>
+  <% if @referral.public_send(field.to_s.gsub(':', '')).present? %>
+    <p>
+      <strong><%= Referral.human_attribute_name(field) %></strong></br >
+      <%= @referral.public_send(field.to_s.gsub(':', '')) %>
+    </p>
+  <% end %>
+<% end %>
+
+<p>
+  <strong><%= Referral.human_attribute_name(:preferred_contact_method) %></strong><br />
+  <%= @referral.preferred_contact_method.reject(&:blank?).join(', ') %>
+</p>

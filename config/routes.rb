@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get code, to: 'errors#show', code: code
   end
 
+  resources :waiting_wells, only: %i[new create], path: 'waiting-wells'
   resources :referrals, only: %i[new create]
   resources :contacts, only: %i[new create]
   resources :pages, only: :show

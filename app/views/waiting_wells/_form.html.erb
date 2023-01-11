@@ -1,0 +1,29 @@
+<%= content_for :head do %>
+  <script>
+    function toggleSelect(elem, containerClass) {
+      let $elem = elem;
+      let containerVal = $elem.val();
+      $('.' + containerClass).addClass('hide');
+      $('.' + containerClass + '[data-referral-value="' + containerVal + '"]').removeClass('hide');
+    }
+
+    $(document).ready(function() {
+      $('.toggle-select').each(function() {
+        let containerClass = $(this).data('class');
+        toggleSelect($(this), containerClass);
+      });
+    });
+
+    $(document).on('change', '.toggle-select', function() {
+      let containerClass = $(this).data('class');
+      //$('.' + containerClass + ' input, .' + containerClass + ' textarea').val('');
+      toggleSelect($(this), containerClass);
+    });
+  </script>
+<% end %>
+
+
+<%= form_for model, url: { action: :create } do |f| %>
+  <%= render 'shared/form_errors', object: model %>
+  <%= render 'form_fields', f: f %>
+<% end %>

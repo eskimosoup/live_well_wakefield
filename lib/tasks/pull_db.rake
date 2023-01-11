@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 namespace :db do
   desc 'Pull production db to development'
-  task pull: %i[dump restore:remote site_settings remote_assets]
+  task pull: %i[dump restore:local site_settings remote_assets]
 
   dumpfile = 'db.dump'
 
@@ -13,9 +13,9 @@ namespace :db do
 
     puts 'Running PG_DUMP on production'
 
-    system "ssh root@postgres.allofmy.co.uk -t '#{export_dump_file_command}'"
-    system "scp root@postgres.allofmy.co.uk:/var/lib/pgsql/#{dumpfile} #{Rails.root}"
-    system "ssh root@postgres.allofmy.co.uk -t 'rm -f /var/lib/pgsql/#{dumpfile}'"
+    system "ssh root@my3.allofmy.co.uk -t '#{export_dump_file_command}'"
+    system "scp root@my3.allofmy.co.uk:/var/lib/postgresql/#{dumpfile} #{Rails.root}"
+    system "ssh root@my3.allofmy.co.uk -t 'rm -f /var/lib/postgresql/#{dumpfile}'"
   end
 
   namespace :restore do
