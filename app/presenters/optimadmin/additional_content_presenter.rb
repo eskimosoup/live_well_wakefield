@@ -3,6 +3,6 @@ module Optimadmin
     include Optimadmin::PresenterMethods
 
     presents :additional_content
-      delegate :id, :title, to: :additional_content
-      end
+    delegate :area, :id, :title, to: :additional_content
+  end
 end
