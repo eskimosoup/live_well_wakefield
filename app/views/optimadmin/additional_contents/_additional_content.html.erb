@@ -1,12 +1,16 @@
 
 <% present additional_content do |additional_content_presenter| %>
   <div class="row collapse module-list-index <%= cycle('odd', 'even') %>" id="item_<%= additional_content_presenter.id %>">
-    
+
+    <div class="columns">
+      <%= additional_content_presenter.area %>
+    </div>
+
     <div class="columns">
       <%= additional_content_presenter.title %>
     </div>
 
-    
+
     <div class="large-1 small-4 text-center columns">
       <%= additional_content_presenter.toggle_link %>
     </div>

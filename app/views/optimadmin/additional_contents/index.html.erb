@@ -10,6 +10,7 @@
   </div>
 
   <div class="row collapse module-list-index header">
+        <%= list_item('') { 'Area' } %>
         <%= list_item('') { 'Title' } %>
         <%= list_item('large-1 small-4 text-center') { 'Display' } %>
     <%= list_item('large-1 small-4 text-center') { 'View' } %>
@@ -20,6 +21,6 @@
     <!-- <div class="module-sortable" data-module="AdditionalContent"> -->
   <%= render partial: 'additional_content', collection: @additional_contents, as: :additional_content, cached: true %>
   <!-- </div> -->
-  
+
   <%= paginate @additional_contents %>
 </div>

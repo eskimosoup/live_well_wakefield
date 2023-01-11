@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.0"
+# lock "~> 3.14.0"
 
 set :application, 'live_well_wakefield'
 set :client, 'south_west_yorkshire_nhs'
